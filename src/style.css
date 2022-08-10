@@ -1,0 +1,127 @@
+* {   /* selectoe universar para eliminar todos espacios que viene por defecto en los navegadores debido a las etiquetas*/ 
+    margin: 0px;  
+    padding: 0px;
+    box-sizing: border-box;  /*margin, border y padding pasan a formar parte del cálculo del ancho de la caja y no lo suman posteriormente*/
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+  
+body{
+    
+   height: 100%;
+
+ /*min-height: 100%;*/
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  background-image: url("img/tira.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  
+  
+  width: 100%;
+  height: 229px;
+  left: 0px;
+  top: 0px;
+
+
+}
+
+.background {
+    background-image: url("img/fondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    opacity: 80%;
+    
+    width: 100%;
+    height: 795px;
+    left: 0px;
+    top: 0px;
+      
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+.container {
+    height: 100%;
+    display: grid;
+    gap: 0px  0px; espacio entre renglones y columnas; 
+    grid-template-columns: 200px repeat(3, 1fr);
+    grid-template-rows: 100px repeat(7, 1fr);
+    grid-template-areas:
+      "header header header header"  
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"
+      "sidebar main main main"; 
+   grid-template: /*con esta instrucción me ahorro las líneas de arriba, comprimido
+        "header  header header header"  100px 
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr
+        "sidebar main   main   main"    1fr /
+        200px    1fr    1fr   1fr; 
+}
+
+*/
+/*
+.header {elijo el área que quiero tenga en el container
+    grid-area: header;
+   background-color: #33ef59;
+  }
+  
+.main { elijo el área que quiero tenga en el container
+    grid-area: main;
+    background-color: #167ff7;
+  }
+  
+.sidebar { elijo el área que quiero tenga en el container
+    grid-area: sidebar;
+    background-color: #c76820;
+  }
+
+ 
+@media (min-width: 360px) {
+    .container {
+        grid-template: con esta instrucción me ahorro las líneas de arriba, comprimido
+        "header  header header"  50px 
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr
+        "sidebar main   main"    1fr /
+        100px    1fr       1fr;
+  
+     
+    }
+  }
+  */
