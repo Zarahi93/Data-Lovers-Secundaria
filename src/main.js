@@ -13,14 +13,16 @@ let years = data.films.map(({release_date}) => release_date)
 const fatherNode=document.querySelector("main");
 
 for (let i = 0; i <posters.length; i++) {
-  const posterOne=document.createElement("img");
-  const titleOne=document.createElement("p");
-  const dateOne=document.createElement("p"); 
+  const posterPicture=document.createElement("img");
+  const titlePicture=document.createElement("p");
+  const yearPicture=document.createElement("p"); 
   const photo = posters[i];
-  posterOne.setAttribute("src", photo);  
-  titleOne.innerHTML=titles[i];
-  dateOne.innerHTML=years[i];
-  fatherNode.append(posterOne, titleOne, dateOne);
+  posterPicture.setAttribute("src", photo);  
+  titlePicture.innerHTML=titles[i];
+  titlePicture.setAttribute("class", `titleMovie`);
+  yearPicture.innerHTML=years[i];
+  yearPicture.setAttribute("class", `yearMovie`);
+  fatherNode.append(posterPicture, titlePicture, yearPicture);
 }
 
 
