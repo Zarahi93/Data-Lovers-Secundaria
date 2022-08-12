@@ -16,6 +16,7 @@ for (let i = 0; i <posters.length; i++) {
   const posterPicture=document.createElement("img");
   const titlePicture=document.createElement("p");
   const yearPicture=document.createElement("p"); 
+  const newDiv=document.createElement("div");
   const photo = posters[i];
   posterPicture.setAttribute("src", photo);  
   posterPicture.setAttribute("class","posterMovie")
@@ -23,6 +24,8 @@ for (let i = 0; i <posters.length; i++) {
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
+  newDiv.setAttribute("class",titles[i])
+  document.getElementById("main").appendChild(newDiv);
   fatherNode.append(posterPicture, titlePicture, yearPicture);
 }
 
