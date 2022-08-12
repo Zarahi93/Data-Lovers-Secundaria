@@ -19,9 +19,9 @@ for (let i = 0; i <posters.length; i++) {
   const photo = posters[i];
   posterPicture.setAttribute("src", photo);  
   titlePicture.innerHTML=titles[i];
-  titlePicture.setAttribute("class", `titleMovie`);
+  titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
-  yearPicture.setAttribute("class", `yearMovie`);
+  yearPicture.setAttribute("class", "yearMovie");
   fatherNode.append(posterPicture, titlePicture, yearPicture);
 }
 
