@@ -48,7 +48,25 @@ header {
   display: flex;
   flex-wrap: wrap;
 }
+.titleMovie{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  color: #0D0C0C;
+}
 
+.yearMovie{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+  color: #0D0C0C;
+}
 
 
 

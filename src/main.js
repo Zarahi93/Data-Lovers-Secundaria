@@ -18,6 +18,7 @@ for (let i = 0; i <posters.length; i++) {
   const yearPicture=document.createElement("p"); 
   const photo = posters[i];
   posterPicture.setAttribute("src", photo);  
+  posterPicture.setAttribute("class","posterMovie")
   titlePicture.innerHTML=titles[i];
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
