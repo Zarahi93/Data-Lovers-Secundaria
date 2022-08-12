@@ -10,7 +10,9 @@ import data from './data/ghibli/ghibli.js';
 let posters = data.films.map(({poster}) => poster);
 let titles = data.films.map(({title}) => title)
 let years = data.films.map(({release_date}) => release_date)
-const fatherNode=document.querySelector("main");
+const grandfatherNode=document.querySelector("main");
+//const fatherNode=document.querySelector("div");
+
 
 for (let i = 0; i <posters.length; i++) {
   const posterPicture=document.createElement("img");
@@ -26,7 +28,8 @@ for (let i = 0; i <posters.length; i++) {
   yearPicture.setAttribute("class", "yearMovie");
   newDiv.setAttribute("class",titles[i])
   document.getElementById("main").appendChild(newDiv);
-  fatherNode.append(posterPicture, titlePicture, yearPicture);
+  //fatherNode.append(newDiv);
+  grandfatherNode.append(posterPicture, titlePicture, yearPicture);
 }
 
 
