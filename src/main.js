@@ -28,7 +28,7 @@ for (let i = 0; i <posters.length; i++) {
   yearPicture.setAttribute("class", "yearMovie");
   newDiv.setAttribute("class",titles[i])
   document.getElementById("main").appendChild(newDiv);
-  //fatherNode.append(newDiv);
+  //fatherNode.appendChild(newDiv);
   grandfatherNode.append(posterPicture, titlePicture, yearPicture);
 }
 
