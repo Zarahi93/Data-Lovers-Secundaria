@@ -46,7 +46,6 @@ header {
 
 .main{
   display: flex;
-
   gap: 20px 20px;
 }
 .aside{
