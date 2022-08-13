@@ -7,29 +7,27 @@ import data from './data/ghibli/ghibli.js';
 
 //*********** 4 se crean los nodos por paquete 
 
-let posters = data.films.map(({poster}) => poster);
+let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
 let titles = data.films.map(({title}) => title)
 let years = data.films.map(({release_date}) => release_date)
-const grandfatherNode=document.querySelector("main");
-//const fatherNode=document.querySelector("div");
-
+const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 for (let i = 0; i <posters.length; i++) {
-  const posterPicture=document.createElement("img");
+  const posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
   const titlePicture=document.createElement("p");
   const yearPicture=document.createElement("p"); 
-  const newDiv=document.createElement("div");
-  const photo = posters[i];
-  posterPicture.setAttribute("src", photo);  
+  const newArt=document.createElement("article");
+  const photo = posters[i];//se le asigna a la variable photo el url de cada posters
+  posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
   posterPicture.setAttribute("class","posterMovie")
-  titlePicture.innerHTML=titles[i];
+  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelucula en el documento html
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
-  newDiv.setAttribute("class",titles[i])
-  document.getElementById("main").appendChild(newDiv);
-  //fatherNode.appendChild(newDiv);
-  grandfatherNode.append(posterPicture, titlePicture, yearPicture);
+  newArt.setAttribute("id",i)
+  newArt.setAttribute("class","box")
+  fatherNode.appendChild(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
+  newArt.append(posterPicture, titlePicture, yearPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
 }
 
 
