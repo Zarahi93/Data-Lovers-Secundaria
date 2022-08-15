@@ -79,7 +79,25 @@ article{/*class=box*/
   width: 200px;
   height: 285px;
  }
-
+form{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #0D0C0C;
+  background-color: #bcf3fb57;
+  display: flex;
+  flex-direction: column;
+  -attachment: fixed;  
+  gap: 15px;
+  padding: 5%;
+}
+.button{
+  align-self: center;
+  width: 70px;
+  height: 25px;
+}
 /*@media (max-width: 600px{
 
 .header {
