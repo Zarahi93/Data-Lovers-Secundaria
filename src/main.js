@@ -30,21 +30,17 @@ for (let i = 0; i <posters.length; i++) {
   newArt.append(posterPicture, titlePicture, yearPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
 }
 
+//***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
 
+const showAllMovies=document.getElementById('main');  
+showAllMovies.addEventListener('click', function(){
+    document.getElementById('showAllMovies').style.display = "none"; //falta agregar cual ocultar y cual ver
+    document.getElementById('showFilter').style.display = "block";
+    filter();
 
+//document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
 
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 
