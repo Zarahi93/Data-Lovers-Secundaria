@@ -34,22 +34,6 @@ for (let i = 0; i <posters.length; i++) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // *****1********* 1 prueba de crear nodos  y elementos de UN solo dato 
 
 
