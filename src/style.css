@@ -31,7 +31,7 @@ header {
   top: 0px;
 }
 
-.background {
+#contents { /*Contiene main y aside*/
     background-image: url("img/fondo.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,21 +41,28 @@ header {
     left: 0px;
     top: 20px;
 }
-
-
-
-.main{
-  display: flex;
-  gap: 20px 20px;
-}
-.aside{
-width: 20%;
+/*Propiedad flexbox primer paso*/
+.background{
+display: flex;
 justify-content: flex-end;
+flex-direction: row-reverse;
 }
 
-article{
-  width: 14.887%;
-  height: 20%;
+.sidebar{
+  width: 344px;
+}
+.main{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 150px;
+}
+
+
+article{/*class=box*/
+  width: 200px;
+  height: 380px;
   font-family: 'Petrona';
   font-style: italic;
   font-weight: 800;
@@ -64,12 +71,13 @@ article{
   text-align: center;
   color: #0D0C0C;
   background-color: #bcf3fb57;
-  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
  .posterMovie{
   width: 200px;
   height: 285px;
-
  }
 
 
