@@ -10,13 +10,17 @@ import data from './data/ghibli/ghibli.js';
 let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
 let titles = data.films.map(({title}) => title)
 let years = data.films.map(({release_date}) => release_date)
+let recap = data.films.map(({description}) => description)
+
 const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 for (let i = 0; i <posters.length; i++) {
   const posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
   const titlePicture=document.createElement("p");
   const yearPicture=document.createElement("p"); 
+  const recapPicture=document.createElement("p");
   const newArt=document.createElement("article");
+  
   const photo = posters[i];//se le asigna a la variable photo el url de cada posters
   posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
   posterPicture.setAttribute("class","posterMovie")
@@ -24,10 +28,11 @@ for (let i = 0; i <posters.length; i++) {
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
-  newArt.setAttribute("id",i)
-  newArt.setAttribute("class","box")
-  fatherNode.appendChild(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
-  newArt.append(posterPicture, titlePicture, yearPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  newArt.setAttribute("class","box");
+  recapPicture.innerHTML=recap[i];
+  recapPicture.setAttribute("class", "recapMovie");
+  fatherNode.append(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
+  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
 }
 
 //***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS

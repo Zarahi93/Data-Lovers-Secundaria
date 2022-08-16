@@ -56,11 +56,11 @@ flex-direction: row-reverse;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px 150px;
+  gap: 30px 130px;
 }
 
 
-article{/*class=box*/
+.box{
   width: 200px;
   height: 380px;
   font-family: 'Petrona';
@@ -89,7 +89,6 @@ form{
   background-color: #bcf3fb57;
   display: flex;
   flex-direction: column;
-  -attachment: fixed;  
   gap: 15px;
   padding: 5%;
 }
@@ -98,6 +97,30 @@ form{
   width: 70px;
   height: 25px;
 }
+
+
+.recapMovie{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align:justify;
+  color: #0D0C0C;
+}
+.box:hover .recapMovie {
+  display: block;
+ }
+ .box .recapMovie {
+  display: none;
+  position: absolute;
+  background-color: #bcf3fb;
+  width: 270px;
+  height: 360px;
+  padding: 1%;
+ }
+
+
 /*@media (max-width: 600px{
 
 .header {
