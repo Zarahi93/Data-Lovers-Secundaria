@@ -115,6 +115,9 @@ form{
 .directorMovie{
   display: none;
 }
+.producerMovie{
+  display: none;
+}
  .box .recapMovie {
   display: none;
   position: absolute;
