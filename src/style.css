@@ -26,12 +26,12 @@ header {
   background-size: cover;
   background-attachment: scroll;
   width: 100%;
-  height: 210px;
+  height: 205px;
   left: 0px;
   top: 0px;
 }
 
-.background {
+#contents { /*Contiene main y aside*/
     background-image: url("img/fondo.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,21 +41,28 @@ header {
     left: 0px;
     top: 20px;
 }
-
-
-
-.main{
-  display: flex;
-  gap: 20px 20px;
-}
-.aside{
-width: 20%;
+/*Propiedad flexbox primer paso*/
+.background{
+display: flex;
 justify-content: flex-end;
+flex-direction: row-reverse;
 }
 
-article{
-  width: 14.887%;
-  height: 20%;
+.sidebar{
+  width: 344px;
+}
+.main{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 130px;
+}
+
+
+.box{
+  width: 200px;
+  height: 380px;
   font-family: 'Petrona';
   font-style: italic;
   font-weight: 800;
@@ -64,21 +71,98 @@ article{
   text-align: center;
   color: #0D0C0C;
   background-color: #bcf3fb57;
-  ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
  .posterMovie{
   width: 200px;
   height: 285px;
+ }
+form{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #0D0C0C;
+  background-color: #bcf3fb57;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 5%;
+}
+.button{
+  align-self: center;
+  width: 70px;
+  height: 25px;
+}
 
+
+.recapMovie{
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align:justify;
+  color: #0D0C0C;
+}
+.box:hover .recapMovie {
+  display: block;
+ }
+ .box .recapMovie {
+  display: none;
+  position: absolute;
+  background-color: #bcf3fb;
+  width: 270px;
+  height: 360px;
+  padding: 1%;
  }
 
 
+/*@media (max-width: 600px{
+
+.header {
+  width: 100vw;
+}
 
 
+#contents {  
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar{
+  width: 28vw;
+}
+.main{
+  width: 82vw;
+  gap: 10px 50px;
+}
 
 
+article{
+  width: 20vw;
+  height: 25vh;
+  font-family: 'Petrona';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #0D0C0C;
+  background-color: #bcf3fb57;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ .posterMovie{
+  width: 20vw;
+ }
+})*/
 
-/*
+ /*
 
 .container {
     height: 100%;
