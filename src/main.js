@@ -41,7 +41,7 @@ for (let i = 0; i <posters.length; i++) {
   producerPicture.setAttribute("class", "producerMovie");
   //newSec.setAttribute("class","hidenBox");
   fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
-  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
   //let  childNode=document.querySelector("article");
   //childNode.append(newSec);
   //newSec.append(recapPicture,directorPicture,producerPicture);
