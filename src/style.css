@@ -50,27 +50,30 @@ flex-direction: row-reverse;
 
 .sidebar{
   width: 344px;
+  padding-top: 3%;
+
 }
 .main{
   width: 70%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px 130px;
+  gap: 65px 130px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 
 .box{
   width: 200px;
   height: 380px;
-  font-family: 'Petrona';
-  font-style: italic;
+  font-family: serif;
   font-weight: 800;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
   color: #0D0C0C;
-  background-color: #bcf3fb57;
+  background-color: #8797f0d0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,13 +83,12 @@ flex-direction: row-reverse;
   height: 285px;
  }
 form{
-  font-family: 'Petrona';
-  font-style: italic;
+  font-family:serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 27px;
   color: #0D0C0C;
-  background-color: #bcf3fb57;
+  background-color: #8797f0ec;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -100,8 +102,7 @@ form{
 
 
 .recapMovie{
-  font-family: 'Petrona';
-  font-style: italic;
+  font-family: serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
@@ -111,12 +112,15 @@ form{
 .box:hover .recapMovie {
   display: block;
  }
+.directorMovie{
+  display: none;
+}
  .box .recapMovie {
   display: none;
   position: absolute;
-  background-color: #bcf3fb;
+  background-color: #8797f0;
   width: 270px;
-  height: 360px;
+  height: 380px;
   padding: 1%;
  }
 
