@@ -7,19 +7,7 @@ html {
     height: 100%;
     width: 100%;
 }
-  /*
-body{
-    
-   height: 100%;
 
- min-height: 100%;
-}
-
-.container {
-  height: 100%;
-  width: 100%;
-}
-*/
 header {
   background-image: url("img/tira.png");
   background-repeat: no-repeat;
@@ -41,28 +29,21 @@ header {
     left: 0px;
     top: 20px;
 }
-/*Propiedad flexbox primer paso*/
-.background{
-display: flex;
+.background{ 
+display: flex;/*Se hace flexbox main y aside*/
 justify-content: flex-end;
 flex-direction: row-reverse;
 }
 
-.sidebar{
-  width: 344px;
-  padding-top: 3%;
-
-}
 .main{
   width: 70%;
-  display: flex;
+  display: flex;/*Se hacen flexbox todos los article */
   flex-wrap: wrap;
   justify-content: center;
   gap: 65px 130px;
   padding-top: 3%;
   padding-bottom: 3%;
 }
-
 
 .box{
   width: 200px;
@@ -74,7 +55,7 @@ flex-direction: row-reverse;
   text-align: center;
   color: #0D0C0C;
   background-color: #8797f0d0;
-  display: flex;
+  display: flex; /*Se hacen flexbox los <p> y <img> */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -84,6 +65,10 @@ flex-direction: row-reverse;
  }
 
  /*Formato a la caja para el filtrado*/
+ .sidebar{
+  width: 344px;
+  padding-top: 3%;
+}
 form{
   font-family:serif;
   font-weight: 600;
@@ -91,16 +76,16 @@ form{
   line-height: 27px;
   color: #0D0C0C;
   background-color: #8797f0ec;
-  display: flex;
+  display: flex;/*Se hacen flexbox a todos los detail*/
   flex-direction: column;
   gap: 15px;
   padding: 5%;
 }
-details{
+details{/*Se hace flexbox a summary y section */
   display: flex;
 }
 .filterBox{
-  display: flex;
+  display: flex;/*Se hace flexbox a todos los label*/
   border-style:dotted;
   border-color: #0D0C0C;
   flex-direction: column;
@@ -113,18 +98,14 @@ label{
   line-height: 27px;
   color: #0D0C0C;
   background-color: #8797f0ec;
-  display: flex;
+  display: flex; /*Se hace flex box a todos los input*/
   gap: 15px;
   padding: 3%;
-}
-.button{
-  align-self: center;
-  width: 70px;
-  height: 25px;
 }
 
 /*Fin del formato de la caja para filtrado*/
 
+/*Formato al resumen de la pelicula*/
 .recapMovie{
   font-family: serif;
   font-weight: 500;
@@ -145,110 +126,4 @@ label{
   height: 440px;
   padding: 1%;
  }
-
-
-/*@media (max-width: 600px{
-
-.header {
-  width: 100vw;
-}
-
-
-#contents {  
-  width: 100vw;
-  height: 100vh;
-}
-
-.sidebar{
-  width: 28vw;
-}
-.main{
-  width: 82vw;
-  gap: 10px 50px;
-}
-
-
-article{
-  width: 20vw;
-  height: 25vh;
-  font-family: 'Petrona';
-  font-style: italic;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  color: #0D0C0C;
-  background-color: #bcf3fb57;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
- .posterMovie{
-  width: 20vw;
- }
-})*/
-
- /*
-
-.container {
-    height: 100%;
-    display: grid;
-    gap: 0px  0px; espacio entre renglones y columnas; 
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-rows: 100px repeat(7, 1fr);
-    grid-template-areas:
-      "header header header header"  
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"; 
-   grid-template: /*con esta instrucción me ahorro las líneas de arriba, comprimido
-        "header  header header header"  100px 
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr /
-        200px    1fr    1fr   1fr; 
-}
-
-*/
-/*
-.header {elijo el área que quiero tenga en el container
-    grid-area: header;
-   background-color: #33ef59;
-  }
-  
-.main { elijo el área que quiero tenga en el container
-    grid-area: main;
-    background-color: #167ff7;
-  }
-  
-.sidebar { elijo el área que quiero tenga en el container
-    grid-area: sidebar;
-    background-color: #c76820;
-  }
-
- 
-@media (min-width: 360px) {
-    .container {
-        grid-template: con esta instrucción me ahorro las líneas de arriba, comprimido
-        "header  header header"  50px 
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr /
-        100px    1fr       1fr;
-  
-     
-    }
-  }
-  */
+/*Fin del formato al resumen de la pelicula*/
