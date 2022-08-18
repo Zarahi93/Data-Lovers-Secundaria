@@ -3,9 +3,10 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-
+//import {filter} from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
+let showData=[];
 
 let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
 let titles = data.films.map(({title}) => title)
@@ -28,13 +29,73 @@ for (let i = 0; i <posters.length; i++) {
   newArt.setAttribute("class","box")
   fatherNode.appendChild(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
   newArt.append(posterPicture, titlePicture, yearPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+    
+  showData = fatherNode.appendChild(newArt); //data a enviar a data.js para hacer el filtrado
+  console.log(showData);
+
+
+
 }
 
 
 
+  //   *************AQUI  se leen los filtros seleccionados
+  let checks = [];
+  
+  checks = document.getElementsByTagName("input");
+  //console.log(checks);
+  
+  for (let i = 0; i < checks.length; i++) {
+    //console.log(checks[i]);
+    checks[i].addEventListener("change", checkOptions, false);
+  
+  
+  }
+  
+  // let filterSelected=[];
+  // function checkOptions (){
+  //   console.log("hola");
+  //   filterSelected = checks.value;
+  //   console.log(filterSelected);
+  //     // checks.forEach((e)=>{
+  //     //   console.log(e.value);
+      
+  //   }
+  
+   
+
+    function checkOptions(event){
+      console.log(event);
+      console.log(event.target.className);
+      // let checked = checks.value;
+      // console.log(checked);
+      // if(checked){
+      //     console.log("checkbox esta seleccionado");
+      // }
+      }
 
 
 
+
+
+
+ // filter(optionSelected filterData);
+
+
+
+
+
+//***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
+
+// const showAllMovies=document.getElementById('main');  
+// showAllMovies.addEventListener('click', function(){
+//     document.getElementById('showAllMovies').style.display = "none"; //falta agregar cual ocultar y cual ver, no spe si se haga así o con eliminar nodos
+//     document.getElementById('showFilter').style.display = "block";
+   // filter();
+
+//document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
+
+//});
 
 
 
@@ -136,3 +197,10 @@ for (let i = 0; i <posters.length; i++) {
 //   dateOne.innerHTML=years[i];
 //   fatherNode.append(dateOne);
 // }
+
+
+
+
+
+
+
