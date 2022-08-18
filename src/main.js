@@ -136,8 +136,3 @@ for (let i = 0; i <posters.length; i++) {
 //   dateOne.innerHTML=years[i];
 //   fatherNode.append(dateOne);
 // }
-
-
-
-
-
