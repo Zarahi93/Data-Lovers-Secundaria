@@ -11,55 +11,42 @@
 
     <section id="container" class="container">
       <header class="header"></header>
-      <section id="contents" class="background"> 
+      <section class="background"> 
         <main id="main" class="main">
           
         </main>
 
         <aside class="sidebar">
-      <!-- AGREGAR MENÚ DESPLEGABLE -->
-          <details id="director" class="director">
-            <summary>DIRECTOR</summary>
-              <form>
-               <label><input type="checkbox">Hayao Miyazaki</label><br>
-                <label><input type="checkbox">Isao Takahata</label><br>
-                <label><input type="checkbox">Yoshifumi Kondō</label><br>
-                <label><input type="checkbox">Gorō Miyazaki</label><br>
-                <label><input type="checkbox">Hiromasa Yonebayashi</label><br>
-                <label><input type="checkbox">Hiroyuki Morita</label>
-              </form>
+                    <!-- AGREGAR MENÚ DESPLEGABLE -->
+          <form>
+          <details>
+            <summary id="director" class="director">DIRECTOR</summary>
+                <label><input type="checkbox" value="director1" class="director1">Hayao Miyazaki</label><br>
+                <label><input type="checkbox" value="director2" class="director2">Isao Takahata</label><br>
+                <label><input type="checkbox" value="director3" class="director3">Yoshifumi Kondō</label><br>
+                <label><input type="checkbox" value="director4" class="director4">Gorō Miyazaki</label><br>
+                <label><input type="checkbox" value="director5" class="director5">Hiromasa Yonebayashi</label><br>
+                <label><input type="checkbox" value="director6" class="director6">Hiroyuki Morita</label>             
           </details>
 
           <details id="producer" class="producer">
             <summary>PRODUCER</summary>
-              <form>
-                <label><input type="checkbox">Hayao Miyazaki</label><br>
-                <label><input type="checkbox">Isao Takahata</label><br>
-                <label><input type="checkbox">Toshio Suzuki</label><br>
-                <label><input type="checkbox">Yoshiaki Nishimura</label><br>
-                <label><input type="checkbox">Toru Hara</label><br>
-             </form>
+                <label><input type="checkbox" value="producer1" class="producer1">Hayao Miyazaki</label><br>
+                <label><input type="checkbox" value="producer2" class="producer2">Isao Takahata</label><br>
+                <label><input type="checkbox" value="producer3" class="producer3">Toshio Suzuki</label><br>
+                <label><input type="checkbox" value="producer4" class="producer4">Yoshiaki Nishimura</label><br>
+                <label><input type="checkbox" value="producer5" class="producer5">Toru Hara</label><br>           
           </details>
 
           <details id="year" class="year">
-            <summary>PRODUCER</summary>
-              <form>
-                <label><input type="checkbox">1980 - 1989</label><br>
-                <label><input type="checkbox">1990 - 1999</label><br>
-                <label><input type="checkbox">2000 - 2009</label><br>
-                <label><input type="checkbox">2010 - 2019</label><br>
-              </form>
+            <summary>YEAR</summary>
+                <label><input type="checkbox" value="year1" class="year1">1980 - 1989</label><br>
+                <label><input type="checkbox" value="year2" class="year2">1990 - 1999</label><br>
+                <label><input type="checkbox" value="year3" class="year3">2000 - 2009</label><br>
+                <label><input type="checkbox" value="year4" class="year4">2010 - 2019</label><br>
           </details>
-
-
-
-
-
-
-
-
-
-
+            <button type="button" id="button" class="button">FILTRAR</button>
+          </form>
         </aside>
       </section> 
    
