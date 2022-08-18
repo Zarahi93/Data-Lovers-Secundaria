@@ -54,10 +54,6 @@ showAllMovies.addEventListener('click', function(){
 
 //document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
 
-});
-
-
-
 
 
 // *****1********* 1 prueba de crear nodos  y elementos de UN solo dato 
