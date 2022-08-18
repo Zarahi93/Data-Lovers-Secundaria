@@ -10,27 +10,49 @@ import data from './data/ghibli/ghibli.js';
 let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
 let titles = data.films.map(({title}) => title)
 let years = data.films.map(({release_date}) => release_date)
+let recap = data.films.map(({description}) => description)
+let directors = data.films.map(({director}) => director)
+let producers = data.films.map(({producer}) => producer)
 const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 for (let i = 0; i <posters.length; i++) {
   const posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
   const titlePicture=document.createElement("p");
   const yearPicture=document.createElement("p"); 
+  const recapPicture=document.createElement("p");
+  const directorPicture=document.createElement("p");
+  const producerPicture=document.createElement("p");
   const newArt=document.createElement("article");
+ // const newSec=document.createElement("section");
+  
   const photo = posters[i];//se le asigna a la variable photo el url de cada posters
   posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
   posterPicture.setAttribute("class","posterMovie")
-  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelucula en el documento html
+  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
-  newArt.setAttribute("id",i)
-  newArt.setAttribute("class","box")
-  fatherNode.appendChild(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
-  newArt.append(posterPicture, titlePicture, yearPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  newArt.setAttribute("class","box");
+  recapPicture.innerHTML=recap[i];
+  recapPicture.setAttribute("class", "recapMovie");
+  directorPicture.innerHTML="Director: "+ directors[i];
+  directorPicture.setAttribute("class", "directorMovie");
+  producerPicture.innerHTML="Producer: " + producers[i];
+  producerPicture.setAttribute("class", "producerMovie");
+  fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
+  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  
 }
 
+//***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
 
+const showAllMovies=document.getElementById('main');  
+showAllMovies.addEventListener('click', function(){
+    document.getElementById('showAllMovies').style.display = "none"; //falta agregar cual ocultar y cual ver
+    document.getElementById('showFilter').style.display = "block";
+    filter();
+
+//document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
 
 
 
