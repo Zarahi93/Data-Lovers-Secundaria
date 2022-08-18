@@ -11,7 +11,8 @@ let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con to
 let titles = data.films.map(({title}) => title)
 let years = data.films.map(({release_date}) => release_date)
 let recap = data.films.map(({description}) => description)
-
+let directors = data.films.map(({director}) => director)
+let producers = data.films.map(({producer}) => producer)
 const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 for (let i = 0; i <posters.length; i++) {
@@ -19,20 +20,31 @@ for (let i = 0; i <posters.length; i++) {
   const titlePicture=document.createElement("p");
   const yearPicture=document.createElement("p"); 
   const recapPicture=document.createElement("p");
+  const directorPicture=document.createElement("p");
+  const producerPicture=document.createElement("p");
   const newArt=document.createElement("article");
+ // const newSec=document.createElement("section");
   
   const photo = posters[i];//se le asigna a la variable photo el url de cada posters
   posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
   posterPicture.setAttribute("class","posterMovie")
-  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelucula en el documento html
+  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
   newArt.setAttribute("class","box");
   recapPicture.innerHTML=recap[i];
   recapPicture.setAttribute("class", "recapMovie");
-  fatherNode.append(newArt);//Se le dice que se ponga el nuevo div despues del anterior.
-  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  directorPicture.innerHTML=directors[i];
+  directorPicture.setAttribute("class", "directorMovie");
+  producerPicture.innerHTML=producers[i];
+  producerPicture.setAttribute("class", "producerMovie");
+  //newSec.setAttribute("class","hidenBox");
+  fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
+  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+  //let  childNode=document.querySelector("article");
+  //childNode.append(newSec);
+  //newSec.append(recapPicture,directorPicture,producerPicture);
 }
 
 //***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
