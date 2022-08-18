@@ -66,10 +66,10 @@ flex-direction: row-reverse;
 
 .box{
   width: 200px;
-  height: 380px;
+  height: 430px;
   font-family: serif;
-  font-weight: 800;
-  font-size: 24px;
+  font-weight: 600;
+  font-size: 22px;
   line-height: 27px;
   text-align: center;
   color: #0D0C0C;
@@ -112,18 +112,13 @@ form{
 .box:hover .recapMovie {
   display: block;
  }
-.directorMovie{
-  display: none;
-}
-.producerMovie{
-  display: none;
-}
+
  .box .recapMovie {
   display: none;
   position: absolute;
   background-color: #8797f0;
   width: 270px;
-  height: 380px;
+  height: 440px;
   padding: 1%;
  }
 

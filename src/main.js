@@ -28,7 +28,7 @@ for (let i = 0; i <posters.length; i++) {
   const photo = posters[i];//se le asigna a la variable photo el url de cada posters
   posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
   posterPicture.setAttribute("class","posterMovie")
-  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelucula en el documento html
+  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
   titlePicture.setAttribute("class", "titleMovie");
   yearPicture.innerHTML=years[i];
   yearPicture.setAttribute("class", "yearMovie");
