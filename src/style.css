@@ -82,6 +82,8 @@ flex-direction: row-reverse;
   width: 200px;
   height: 285px;
  }
+
+ /*Formato a la caja para el filtrado*/
 form{
   font-family:serif;
   font-weight: 600;
@@ -94,12 +96,34 @@ form{
   gap: 15px;
   padding: 5%;
 }
+details{
+  display: flex;
+}
+.filterBox{
+  display: flex;
+  border-style:dotted;
+  border-color: #0D0C0C;
+  flex-direction: column;
+  margin: 3%;
+}
+label{
+  font-family:serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #0D0C0C;
+  background-color: #8797f0ec;
+  display: flex;
+  gap: 15px;
+  padding: 3%;
+}
 .button{
   align-self: center;
   width: 70px;
   height: 25px;
 }
 
+/*Fin del formato de la caja para filtrado*/
 
 .recapMovie{
   font-family: serif;
