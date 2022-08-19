@@ -10,8 +10,8 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-export const filter = (filterSelected filterData) => {
-  //console.log(filterData);
+export const filter = (filterOptionSelected, filterBooleanValue) => {
+  console.log(filterOptionSelected, filterBooleanValue, showData);
  
 
 
