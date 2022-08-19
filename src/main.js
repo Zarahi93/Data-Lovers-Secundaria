@@ -2,15 +2,16 @@
 
 // import data from './data/rickandmorty/rickandmorty.js';
 
+//import { filterData } from './data.js';
 import data from './data/ghibli/ghibli.js';
-//import {filter} from './data.js';
+import {filter} from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 let showData=[];
 
 let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-let titles = data.films.map(({title}) => title)
-let years = data.films.map(({release_date}) => release_date)
+let titles = data.films.map(({title}) => title);
+let years = data.films.map(({release_date}) => release_date);
 const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 for (let i = 0; i <posters.length; i++) {
@@ -33,6 +34,7 @@ for (let i = 0; i <posters.length; i++) {
   showData = fatherNode.appendChild(newArt); //data a enviar a data.js para hacer el filtrado
   console.log(showData);
 
+  
 
 
 }
@@ -41,61 +43,27 @@ for (let i = 0; i <posters.length; i++) {
 
   //   *************AQUI  se leen los filtros seleccionados
   let checks = [];
-  
-  checks = document.getElementsByTagName("input");
-  //console.log(checks);
-  
+  checks = document.getElementsByTagName("input"); 
   for (let i = 0; i < checks.length; i++) {
-    //console.log(checks[i]);
-    checks[i].addEventListener("change", checkOptions, false);
-  
-  
+    checks[i].addEventListener("change", checkOptions); 
   }
-  
-  // let filterSelected=[];
-  // function checkOptions (){
-  //   console.log("hola");
-  //   filterSelected = checks.value;
-  //   console.log(filterSelected);
-  //     // checks.forEach((e)=>{
-  //     //   console.log(e.value);
+
+  let filterOptionSelected = [];
+  let filterBooleanValue = [];
+  function checkOptions(event){
+    //console.log(event);
+    filterOptionSelected.push(event.target.className);
+   // console.log(filterOptionSelected);
+    filterBooleanValue.push(event.target.checked);
+    //console.log(filterBooleanValue);
+    
+    filter (filterOptionSelected, filterBooleanValue, showData);
       
-  //   }
-  
-   
-
-    function checkOptions(event){
-      console.log(event);
-      console.log(event.target.className);
-      // let checked = checks.value;
-      // console.log(checked);
-      // if(checked){
-      //     console.log("checkbox esta seleccionado");
-      // }
-      }
+      
+    }
 
 
 
-
-
-
- // filter(optionSelected filterData);
-
-
-
-
-
-//***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
-
-// const showAllMovies=document.getElementById('main');  
-// showAllMovies.addEventListener('click', function(){
-//     document.getElementById('showAllMovies').style.display = "none"; //falta agregar cual ocultar y cual ver, no spe si se haga así o con eliminar nodos
-//     document.getElementById('showFilter').style.display = "block";
-   // filter();
-
-//document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
-
-//});
 
 
 
