@@ -23,7 +23,6 @@ for (let i = 0; i <posters.length; i++) {
   const directorPicture=document.createElement("p");
   const producerPicture=document.createElement("p");
   const newArt=document.createElement("article");
- // const newSec=document.createElement("section");
   
   const photo = posters[i];//se le asigna a la variable photo el url de cada posters
   posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
