@@ -7,138 +7,133 @@ html {
     height: 100%;
     width: 100%;
 }
-  /*
-body{
-    
-   height: 100%;
 
- min-height: 100%;
-}
-
-.container {
-  height: 100%;
-  width: 100%;
-}
-*/
 header {
   background-image: url("img/tira.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: scroll;
   width: 100%;
-  height: 210px;
-  left: 0px;
-  top: 0px;
+  height: 205px;
 }
 
-.background {
-    background-image: url("img/fondo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;  
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 20px;
+.background{ /*Contiene main y aside*/
+background-image: url("img/fondo.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;  
+width: 100%;
+height: 100%;
+display: flex;/*Se hace flexbox main y aside*/
+justify-content: flex-end;
+flex-direction: row-reverse;
 }
-
-
 
 .main{
-  display: flex;
-  gap: 20px 20px;
-}
-.aside{
-width: 20%;
-justify-content: flex-end;
+  width: 70%;
+  display: flex;/*Se hacen flexbox todos los article */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 65px 130px;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
-article{
-  width: 14.887%;
-  height: 20%;
-  font-family: 'Petrona';
-  font-style: italic;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 27px;
+.box{
+  width: 200px;
+  height: 460px;
+  font-family: serif;
+  font-weight: 600;
+  font-size: 21px;
   text-align: center;
   color: #0D0C0C;
-  background-color: #bcf3fb57;
-  ;
+  background-color: #8797f0d0;
+  display: flex; /*Se hacen flexbox los <p> y <img> */
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.directorMovie {
+  font-family: serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #0D0C0C;
+}
+
+.producerMovie{
+  font-family: serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #0D0C0C;
+}
+
  .posterMovie{
   width: 200px;
   height: 285px;
-
  }
 
-
-
-
-
-
-
-/*
-
-.container {
-    height: 100%;
-    display: grid;
-    gap: 0px  0px; espacio entre renglones y columnas; 
-    grid-template-columns: 200px repeat(3, 1fr);
-    grid-template-rows: 100px repeat(7, 1fr);
-    grid-template-areas:
-      "header header header header"  
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"
-      "sidebar main main main"; 
-   grid-template: /*con esta instrucción me ahorro las líneas de arriba, comprimido
-        "header  header header header"  100px 
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr
-        "sidebar main   main   main"    1fr /
-        200px    1fr    1fr   1fr; 
+ /*Formato a la caja para el filtrado*/
+ .sidebar{
+  width: 344px;
+  padding-top: 3%;
+}
+form{
+  font-family:serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #0D0C0C;
+  background-color: #8797f0ec;
+  display: flex;/*Se hacen flexbox a todos los detail*/
+  flex-direction: column;
+  gap: 15px;
+  padding: 5%;
+}
+details{/*Se hace flexbox a summary y section */
+  display: flex;
+}
+.filterBox{
+  display: flex;/*Se hace flexbox a todos los label*/
+  border-style:dotted;
+  border-color: #0D0C0C;
+  flex-direction: column;
+  margin: 3%;
+}
+label{
+  font-family:serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  color: #0D0C0C;
+  background-color: #8797f0ec;
+  display: flex; /*Se hace flex box a todos los input*/
+  gap: 15px;
+  padding: 3%;
 }
 
-*/
-/*
-.header {elijo el área que quiero tenga en el container
-    grid-area: header;
-   background-color: #33ef59;
-  }
-  
-.main { elijo el área que quiero tenga en el container
-    grid-area: main;
-    background-color: #167ff7;
-  }
-  
-.sidebar { elijo el área que quiero tenga en el container
-    grid-area: sidebar;
-    background-color: #c76820;
-  }
+/*Fin del formato de la caja para filtrado*/
 
- 
-@media (min-width: 360px) {
-    .container {
-        grid-template: con esta instrucción me ahorro las líneas de arriba, comprimido
-        "header  header header"  50px 
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr
-        "sidebar main   main"    1fr /
-        100px    1fr       1fr;
-  
-     
-    }
-  }
-  */
+/*Formato al resumen de la pelicula*/
+.recapMovie{
+  font-family: serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align:justify;
+  color: #0D0C0C;
+}
+
+.box:hover .recapMovie {
+  display: block;
+ }
+
+ .box .recapMovie {
+  display: none;
+  position: absolute;
+  background-color: #8797f0;
+  width: 270px;
+  height: 440px;
+  padding: 1%;
+ }
+/*Fin del formato al resumen de la pelicula*/
