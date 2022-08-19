@@ -51,7 +51,7 @@ showAllMovies.addEventListener('click', function(){
     document.getElementById('showAllMovies').style.display = "none"; //falta agregar cual ocultar y cual ver
     document.getElementById('showFilter').style.display = "block";
     filter();
-
+  });
 //document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
 
 
