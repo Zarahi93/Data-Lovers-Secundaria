@@ -11,7 +11,7 @@ export const anotherExample = () => {
 };
 
 export const filter = (filterOptionSelected, filterBooleanValue) => {
-  console.log(filterOptionSelected, filterBooleanValue, showData);
+  console.log(filterOptionSelected, filterBooleanValue);
  
 
 

@@ -47,7 +47,7 @@ flex-direction: row-reverse;
   font-size: 21px;
   text-align: center;
   color: #0D0C0C;
-  background-color: #8797f0d0;
+  background-color: #b49a61e3;
   display: flex; /*Se hacen flexbox los <p> y <img> */
   flex-direction: column;
   justify-content: space-between;
@@ -79,13 +79,13 @@ flex-direction: row-reverse;
   width: 344px;
   padding-top: 3%;
 }
-form{
+.boxAside{
   font-family:serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 27px;
   color: #0D0C0C;
-  background-color: #8797f0ec;
+  background-color: #b49a61e3;
   display: flex;/*Se hacen flexbox a todos los detail*/
   flex-direction: column;
   gap: 15px;

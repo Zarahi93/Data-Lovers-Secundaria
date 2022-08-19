@@ -58,7 +58,7 @@ for (let i = 0; i <posters.length; i++) {
     filterBooleanValue.push(event.target.checked);
     //console.log(filterBooleanValue);
     
-    filter (filterOptionSelected, filterBooleanValue, showData);
+    filter (filterOptionSelected, filterBooleanValue);
       
       
     }
