@@ -35,16 +35,13 @@ for (let i = 0; i <posters.length; i++) {
   newArt.setAttribute("class","box");
   recapPicture.innerHTML=recap[i];
   recapPicture.setAttribute("class", "recapMovie");
-  directorPicture.innerHTML=directors[i];
+  directorPicture.innerHTML="Director: "+ directors[i];
   directorPicture.setAttribute("class", "directorMovie");
-  producerPicture.innerHTML=producers[i];
+  producerPicture.innerHTML="Producer: " + producers[i];
   producerPicture.setAttribute("class", "producerMovie");
-  //newSec.setAttribute("class","hidenBox");
   fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
   newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
-  //let  childNode=document.querySelector("article");
-  //childNode.append(newSec);
-  //newSec.append(recapPicture,directorPicture,producerPicture);
+  
 }
 
 //***************MOSTRAR PANTALLA CON FILTROS Y OCULTAR PELÍCULAS NO FILTRADAS
@@ -56,10 +53,6 @@ showAllMovies.addEventListener('click', function(){
     filter();
 
 //document.getElementById('diarioCifrado').value = cipher.encode(offsetCifrar, originalText);
-
-});
-
-
 
 
 
