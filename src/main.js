@@ -3,7 +3,7 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-
+import { filter } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 
@@ -40,27 +40,56 @@ for (let i = 0; i <posters.length; i++) {
   producerPicture.setAttribute("class", "producerMovie");
   fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
   newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
-  
+  //console.log(newArt);
 }
-  //   *************AQUI  se leen los filtros seleccionados
-  let checks = [];
-  checks = document.getElementsByTagName("input"); 
-  for (let i = 0; i < checks.length; i++) {
+
+//      *************AQUI  se leen los filtros seleccionados
+   let checks = [];
+   checks = document.getElementsByTagName("input"); 
+
+   for (let i = 0; i < checks.length; i++) {
     checks[i].addEventListener("change", checkOptions); 
   }
-
-  let filterOptionSelected = [];
-  let filterBooleanValue = [];
+  
+  
+  let filterClassName = []; 
+  let filterSelected = [];
   function checkOptions(event){
     //console.log(event);
-    filterOptionSelected.push(event.target.className);
-   // console.log(filterOptionSelected);
-    filterBooleanValue.push(event.target.checked);
-    //console.log(filterBooleanValue);
-    
-    filter (filterOptionSelected, filterBooleanValue, showData);
-      
-      
+     filterSelected = (event.target.value);
+     //console.log(filterSelected);
+     filterClassName = (event.target.className);
+    // console.log(filterClassName);
+    filter (filterSelected, filterClassName);
+     
+    }
+
+
+//  if(event.target.className==="director"){
+//   let filterDirector = (event.target.value);
+//   console.log("director" + filterDirector);
+//   filter (filterDirector);
+
+// }else if(event.target.className==="producer"){
+//  let filterProducer = (event.target.value);
+//  console.log("productor" +filterProducer);
+//  filter (filterProducer);
+// }else {
+//  let filterYear = (event.target.value);
+//  console.log("año" +filterYear);
+//  filter (filterYear);
+
+
+           
+  
+
+
+let clear=document.getElementById("unselect");
+clear.addEventListener("click", unselect);
+
+    function unselect(){
+      document.querySelectorAll("input").forEach((input) => input.checked=false);
+
     }
 
 // *****1********* 1 prueba de crear nodos  y elementos de UN solo dato 
