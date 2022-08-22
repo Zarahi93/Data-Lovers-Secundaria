@@ -9,7 +9,6 @@ export const example = () => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
 //let titles = data.films.map(({title}) => title);
 // console.log(titles);
 
@@ -51,10 +50,6 @@ export const filter = (filterSelected, filterClassName) => {
     }
     
   }
-
-
-
-
 
 
 

@@ -89,7 +89,6 @@ clear.addEventListener("click", unselect);
 
     function unselect(){
       document.querySelectorAll("input").forEach((input) => input.checked=false);
-
     }
 
 // *****1********* 1 prueba de crear nodos  y elementos de UN solo dato 

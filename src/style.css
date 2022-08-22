@@ -47,7 +47,7 @@ flex-direction: row-reverse;
   font-size: 21px;
   text-align: center;
   color: #0D0C0C;
-  background-color: #8797f0d0;
+  background-color: #8797f0ec;
   display: flex; /*Se hacen flexbox los <p> y <img> */
   flex-direction: column;
   justify-content: space-between;
@@ -79,7 +79,8 @@ flex-direction: row-reverse;
   width: 344px;
   padding-top: 3%;
 }
-.boxAside {
+
+.boxAside{
   font-family:serif;
   font-weight: 600;
   font-size: 20px;
@@ -90,6 +91,7 @@ flex-direction: row-reverse;
   flex-direction: column;
   gap: 15px;
   padding: 5%;
+  border-style:double;
 }
 details{/*Se hace flexbox a summary y section */
   display: flex;
@@ -97,7 +99,7 @@ details{/*Se hace flexbox a summary y section */
 .filterBox{
   display: flex;/*Se hace flexbox a todos los label*/
   border-style:dotted;
-  border-color: #0D0C0C;
+  border-color:rgb(211, 250, 250) ;
   flex-direction: column;
   margin: 3%;
 }
