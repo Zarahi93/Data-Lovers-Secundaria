@@ -7,41 +7,104 @@ import { filter } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 
-let posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-let titles = data.films.map(({title}) => title)
-let years = data.films.map(({release_date}) => release_date)
-let recap = data.films.map(({description}) => description)
-let directors = data.films.map(({director}) => director)
-let producers = data.films.map(({producer}) => producer)
-const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
+let activeFilter="false";
+let selectedData=[];
+let posters = [];
+let titles = []; 
+let years = [];
+let recap = [];
+let directors = [];
+let producers = [];
 
-for (let i = 0; i <posters.length; i++) {
-  const posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
-  const titlePicture=document.createElement("p");
-  const yearPicture=document.createElement("p"); 
-  const recapPicture=document.createElement("p");
-  const directorPicture=document.createElement("p");
-  const producerPicture=document.createElement("p");
-  const newArt=document.createElement("article");
-  
-  const photo = posters[i];//se le asigna a la variable photo el url de cada posters
-  posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
-  posterPicture.setAttribute("class","posterMovie")
-  titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
-  titlePicture.setAttribute("class", "titleMovie");
-  yearPicture.innerHTML=years[i];
-  yearPicture.setAttribute("class", "yearMovie");
-  newArt.setAttribute("class","box");
-  recapPicture.innerHTML=recap[i];
-  recapPicture.setAttribute("class", "recapMovie");
-  directorPicture.innerHTML="Director: "+ directors[i];
-  directorPicture.setAttribute("class", "directorMovie");
-  producerPicture.innerHTML="Producer: " + producers[i];
-  producerPicture.setAttribute("class", "producerMovie");
-  fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
-  newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
-  //console.log(newArt);
+let posterPicture="";
+let titlePicture="";
+let yearPicture=""; 
+let recapPicture="";
+let directorPicture="";
+let producerPicture="";
+let newArt="";
+let photo = "";
+let fatherNode="";
+
+function mapData(){
+
+  posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  titles = data.films.map(({title}) => title);
+  years = data.films.map(({release_date}) => release_date);
+  recap = data.films.map(({description}) => description);
+  directors = data.films.map(({director}) => director);
+  producers = data.films.map(({producer}) => producer);
+
 }
+
+function showMovies () {
+  for (let i = 0; i <posters.length; i++) {
+    posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
+    titlePicture=document.createElement("p");
+    yearPicture=document.createElement("p"); 
+    recapPicture=document.createElement("p");
+    directorPicture=document.createElement("p");
+    producerPicture=document.createElement("p");
+    newArt=document.createElement("article");
+    photo = posters[i];//se le asigna a la variable photo el url de cada posters
+    posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
+    posterPicture.setAttribute("class","posterMovie")
+    titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
+    titlePicture.setAttribute("class", "titleMovie");
+    yearPicture.innerHTML=years[i];
+    yearPicture.setAttribute("class", "yearMovie");
+    newArt.setAttribute("class","box");
+    recapPicture.innerHTML=recap[i];
+    recapPicture.setAttribute("class", "recapMovie");
+    directorPicture.innerHTML="Director: "+ directors[i];
+    directorPicture.setAttribute("class", "directorMovie");
+    producerPicture.innerHTML="Producer: " + producers[i];
+    producerPicture.setAttribute("class", "producerMovie");
+    fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
+    newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+    //console.log(newArt);
+  
+  
+  }
+
+}
+
+
+function unselect(){
+  document.querySelectorAll("input").forEach((input) => input.checked=false);
+  fatherNode.innerHTML="";
+  mapData();
+  showMovies();
+  
+}
+
+
+fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
+
+mapData();
+showMovies();
+
+
+function showFilter(){
+  fatherNode.innerHTML=""; 
+  selectedData = filter (filterSelected, filterClassName); 
+  //console.log(selectedData);
+ // let principal="";
+
+  if (activeFilter==="true") {
+     
+    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+    titles = selectedData.map(({title}) => title)
+    years = selectedData.map(({release_date}) => release_date)
+    recap = selectedData.map(({description}) => description)
+    directors = selectedData.map(({director}) => director)
+    producers = selectedData.map(({producer}) => producer)
+    showMovies ();
+
+    
+  }
+}
+
 
 //      *************AQUI  se leen los filtros seleccionados
    let checks = [];
@@ -49,6 +112,8 @@ for (let i = 0; i <posters.length; i++) {
 
    for (let i = 0; i < checks.length; i++) {
     checks[i].addEventListener("change", checkOptions); 
+
+    
   }
   
   
@@ -60,36 +125,23 @@ for (let i = 0; i <posters.length; i++) {
      //console.log(filterSelected);
      filterClassName = (event.target.className);
     // console.log(filterClassName);
+    activeFilter="true";
+    //fatherNode.remove();
     filter (filterSelected, filterClassName);
-     
+
+    showFilter();
+        
     }
 
 
-//  if(event.target.className==="director"){
-//   let filterDirector = (event.target.value);
-//   console.log("director" + filterDirector);
-//   filter (filterDirector);
+    
 
-// }else if(event.target.className==="producer"){
-//  let filterProducer = (event.target.value);
-//  console.log("productor" +filterProducer);
-//  filter (filterProducer);
-// }else {
-//  let filterYear = (event.target.value);
-//  console.log("año" +filterYear);
-//  filter (filterYear);
-
-
-           
-  
 
 
 let clear=document.getElementById("unselect");
 clear.addEventListener("click", unselect);
 
-    function unselect(){
-      document.querySelectorAll("input").forEach((input) => input.checked=false);
-    }
+  
 
 // *****1********* 1 prueba de crear nodos  y elementos de UN solo dato 
 
