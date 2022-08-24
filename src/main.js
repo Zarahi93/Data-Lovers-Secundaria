@@ -8,6 +8,7 @@ import { filter } from './data.js';
 //*********** 4 se crean los nodos por paquete 
 
 let activeFilter="false";
+//let activeOrder="false";
 let selectedData=[];
 let posters = [];
 let titles = []; 
@@ -70,14 +71,6 @@ function showMovies () {
 }
 
 
-function unselect(){
-  document.querySelectorAll("input").forEach((input) => input.checked=false);
-  fatherNode.innerHTML="";
-  mapData();
-  showMovies();
-  
-}
-
 
 fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
@@ -88,7 +81,7 @@ showMovies();
 function showFilter(){
   fatherNode.innerHTML=""; 
   selectedData = filter (filterSelected, filterClassName); 
-  //console.log(selectedData);
+    //console.log(selectedData);
  // let principal="";
 
   if (activeFilter==="true") {
@@ -111,11 +104,8 @@ function showFilter(){
    checks = document.getElementsByTagName("input"); 
 
    for (let i = 0; i < checks.length; i++) {
-    checks[i].addEventListener("change", checkOptions); 
-
-    
+    checks[i].addEventListener("change", checkOptions);     
   }
-  
   
   let filterClassName = []; 
   let filterSelected = [];
@@ -125,14 +115,19 @@ function showFilter(){
      //console.log(filterSelected);
      filterClassName = (event.target.className);
     // console.log(filterClassName);
-    activeFilter="true";
-    //fatherNode.remove();
-    filter (filterSelected, filterClassName);
-
-    showFilter();
+    // if (filterClassName==="order") {
+    //   activeOrder="true";
+    //   //fatherNode.remove();
+    //   order (filterSelected);
+    //   //showOrder();
+    // }else{
+      activeFilter="true";
+      //fatherNode.remove();
+      filter (filterSelected, filterClassName);
+      showFilter();
         
-    }
-
+    // }
+  }
 
     
 
@@ -140,6 +135,14 @@ function showFilter(){
 
 let clear=document.getElementById("unselect");
 clear.addEventListener("click", unselect);
+
+function unselect(){
+  document.querySelectorAll("input").forEach((input) => input.checked=false);
+  fatherNode.innerHTML="";
+  mapData();
+  showMovies();
+  
+}
 
   
 
