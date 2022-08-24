@@ -1,5 +1,6 @@
 * {   /* selectoe universar para eliminar todos espacios que viene por defecto en los navegadores debido a las etiquetas*/ 
     margin: 0px;  
+    padding: 0px;
       /*margin, border y padding pasan a formar parte del cálculo del ancho de la caja y no lo suman posteriormente*/
 }
 
@@ -28,6 +29,7 @@ display: flex;/*Se hace flexbox main y aside*/
 justify-content: flex-end;
 flex-direction: row-reverse;
 }
+
 
 .main{
   width: 70%;
@@ -87,7 +89,7 @@ flex-direction: row-reverse;
   line-height: 27px;
   color: #0D0C0C;
   background-color: #8797f0ec;
-  display: flex;/*Se hacen flexbox a todos los detail*/
+  display: flex;/*Se hacen flexbox a todos los detail y al button*/
   flex-direction: column;
   gap: 15px;
   padding: 5%;
@@ -96,6 +98,28 @@ flex-direction: row-reverse;
 details{/*Se hace flexbox a summary y section */
   display: flex;
 }
+
+button {
+  font-family:serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  width: 130px;
+  margin: auto;
+  color: #0D0C0C;
+  background-color: #c3cbf3ec;
+  gap: 20px;
+  padding: 2%;
+  border-radius: 10%;
+  border-color: rgb(183, 216, 240);
+
+}
+
+button:hover {
+  background-color: #e4e6edec;
+  color: #182e84;
+ }
+
 .filterBox{
   display: flex;/*Se hace flexbox a todos los label*/
   border-style:dotted;
@@ -103,6 +127,15 @@ details{/*Se hace flexbox a summary y section */
   flex-direction: column;
   margin: 3%;
 }
+
+.orderBox{
+  display: flex;/*Se hace flexbox a todos los label*/
+  border-style:dotted;
+  border-color:rgb(211, 250, 250) ;
+  flex-direction: column;
+  margin: 3%;
+}
+
 label{
   font-family:serif;
   font-weight: 400;
@@ -139,3 +172,5 @@ label{
   padding: 1%;
  }
 /*Fin del formato al resumen de la pelicula*/
+
+
