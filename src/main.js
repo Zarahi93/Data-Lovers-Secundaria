@@ -3,12 +3,12 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-import { filter } from './data.js';
+import { filter, order } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 
 let activeFilter="false";
-//let activeOrder="false";
+let activeOrder="false";
 let selectedData=[];
 let posters = [];
 let titles = []; 
@@ -109,24 +109,28 @@ function showFilter(){
   
   let filterClassName = []; 
   let filterSelected = [];
+  let orderSelected = [];
   function checkOptions(event){
     //console.log(event);
      filterSelected = (event.target.value);
+     orderSelected = (event.target.value);
      //console.log(filterSelected);
      filterClassName = (event.target.className);
-    // console.log(filterClassName);
-    // if (filterClassName==="order") {
-    //   activeOrder="true";
-    //   //fatherNode.remove();
-    //   order (filterSelected);
-    //   //showOrder();
-    // }else{
+    //console.log(filterClassName);
+    if (filterClassName==="order") {
+      activeOrder="true";
+      let datas=data.films;
+      //console.log(orderSelected);
+      //fatherNode.remove();
+      order (orderSelected, datas);
+      //showOrder();
+    }else{
       activeFilter="true";
       //fatherNode.remove();
       filter (filterSelected, filterClassName);
       showFilter();
         
-    // }
+     }
   }
 
     
