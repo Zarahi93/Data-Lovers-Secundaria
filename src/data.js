@@ -50,37 +50,50 @@ export const filter = (filterSelected, filterClassName) => {
 
 
 
-  // export const order = (filterSelected) => {
+  export const order = (orderSelected, datas) => {
+    
+    let orderData = [];
 
-  // console.log(filterSelected);
-  // //let fail="Debes dar un nombre en class = director o producer o year";
-  // let filterData = [];
-  //   if(filterSelected==="upward"){
-      //console.log("director" + filterSelected);
+    function upward(x, y){
+      if (x.title < y.title) {return -1}
+      if (x.title > y.title) {return 1}
+      return 0;
+    }
 
+    // function downward(x, y){
+    //   if (x.title > y.title) {return -1}
+    //   if (x.title < y.title) {return 1}
+    //   return 0;
+    // }
+
+    if(orderSelected==="upward"){
+    //   console.log(orderSelected);
+      orderData = datas.sort((x, y) => upward(x, y));
       
+    // }else if(orderSelected==="downward"){
+    //   orderData = datas.sort((x, y) => downward(x, y)); 
+           
+     
+     }
+
+    console.log(orderData);
       
-      // filterData = data.films.title.sort(a-b);
-      // console.log(filterData);
-      
-      // return filterData;
+
+     // return orderData;
         
      
-    // }else if(filterSelected==="falling"){
-    //   //console.log("producer" + filterSelected);
-
-    //   filterData = data.films.filter(({producer}) => producer===filterSelected);
-    //   //console.log(filterData);
+    // }else if(filterSelected==="downward"){
+    
       
     //   return filterData;
-   // } 
+    //} 
 
 
 
 
 
 
-  //}
+  }
 
 
 
