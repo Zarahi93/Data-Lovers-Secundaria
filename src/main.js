@@ -6,7 +6,7 @@ import data from './data/ghibli/ghibli.js';
 import { filter, order } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
-
+let datas=data.films;
 let activeFilter="false";
 let activeOrder="false";
 let selectedData=[];
@@ -31,6 +31,7 @@ function mapData(){
 
   posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = data.films.map(({title}) => title);
+  console.log(titles);
   years = data.films.map(({release_date}) => release_date);
   recap = data.films.map(({description}) => description);
   directors = data.films.map(({director}) => director);
@@ -81,8 +82,6 @@ showMovies();
 function showFilter(){
   fatherNode.innerHTML=""; 
   selectedData = filter (filterSelected, filterClassName); 
-    //console.log(selectedData);
- // let principal="";
 
   if (activeFilter==="true") {
      
@@ -93,8 +92,23 @@ function showFilter(){
     directors = selectedData.map(({director}) => director)
     producers = selectedData.map(({producer}) => producer)
     showMovies ();
+  }
+}
 
-    
+
+function showOrder(){
+  fatherNode.innerHTML=""; 
+  selectedData = order (orderSelected, datas); 
+
+  if (activeOrder==="true") {
+     
+    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+    titles = selectedData.map(({title}) => title)
+    years = selectedData.map(({release_date}) => release_date)
+    recap = selectedData.map(({description}) => description)
+    directors = selectedData.map(({director}) => director)
+    producers = selectedData.map(({producer}) => producer)
+    showMovies ();
   }
 }
 
@@ -119,14 +133,10 @@ function showFilter(){
     //console.log(filterClassName);
     if (filterClassName==="order") {
       activeOrder="true";
-      let datas=data.films;
-      //console.log(orderSelected);
-      //fatherNode.remove();
       order (orderSelected, datas);
-      //showOrder();
+      showOrder();
     }else{
       activeFilter="true";
-      //fatherNode.remove();
       filter (filterSelected, filterClassName);
       showFilter();
         
