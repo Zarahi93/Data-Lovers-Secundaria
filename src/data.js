@@ -1,14 +1,7 @@
 // estas funciones son de ejemplo
 import data from './data/ghibli/ghibli.js';
 
-/*
-export const example = () => {
-  return 'example';
-};
-*/
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
+
 //let titles = data.films.map(({title}) => title);
 // console.log(titles);
 
@@ -16,13 +9,13 @@ export const example = () => {
 
 export const filter = (filterSelected, filterClassName) => {
   //console.log(filterSelected, filterClassName);
- // let showFilter="true";
+  let fail="Debes dar un nombre de director o producer o un año válido";
   let filterData = [];
     if(filterClassName==="director"){
       //console.log("director" + filterSelected);
 
       filterData = data.films.filter(({director}) => director===filterSelected);
-     // console.log(filterData);
+      //console.log(filterData);
       
       return filterData;
         
@@ -35,7 +28,8 @@ export const filter = (filterSelected, filterClassName) => {
       
       return filterData;
 
-    }else{
+    }else if(typeof filterSelected === "string" && filterClassName==="year") {
+     // console.log(typeof filterSelected);
       filterSelected=filterSelected.split(','); 
       //console.log(filterSelected);
       
@@ -48,10 +42,45 @@ export const filter = (filterSelected, filterClassName) => {
       
       return filterData;
         
+    }else {
+      return fail;
     }
     
   }
 
+
+
+  // export const order = (filterSelected) => {
+
+  // console.log(filterSelected);
+  // //let fail="Debes dar un nombre en class = director o producer o year";
+  // let filterData = [];
+  //   if(filterSelected==="upward"){
+      //console.log("director" + filterSelected);
+
+      
+      
+      // filterData = data.films.title.sort(a-b);
+      // console.log(filterData);
+      
+      // return filterData;
+        
+     
+    // }else if(filterSelected==="falling"){
+    //   //console.log("producer" + filterSelected);
+
+    //   filterData = data.films.filter(({producer}) => producer===filterSelected);
+    //   //console.log(filterData);
+      
+    //   return filterData;
+   // } 
+
+
+
+
+
+
+  //}
 
 
 
