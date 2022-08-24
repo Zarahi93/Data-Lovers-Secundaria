@@ -69,24 +69,16 @@ export const filter = (filterSelected, filterClassName) => {
     if(orderSelected==="upward"){
     //   console.log(orderSelected);
       orderData = datas.sort((x, y) => upward(x, y));
+      return orderData;
       
     }else if(orderSelected==="downward"){
       orderData = datas.sort((x, y) => downward(x, y)); 
-           
+      return orderData;   
      
      }
 
-    console.log(orderData);
-      
-
-     // return orderData;
-        
-     
-    // }else if(filterSelected==="downward"){
     
       
-    //   return filterData;
-    //} 
 
 
 
