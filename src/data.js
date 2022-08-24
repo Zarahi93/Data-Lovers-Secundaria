@@ -60,18 +60,18 @@ export const filter = (filterSelected, filterClassName) => {
       return 0;
     }
 
-    // function downward(x, y){
-    //   if (x.title > y.title) {return -1}
-    //   if (x.title < y.title) {return 1}
-    //   return 0;
-    // }
+    function downward(x, y){
+      if (x.title > y.title) {return -1}
+      if (x.title < y.title) {return 1}
+      return 0;
+    }
 
     if(orderSelected==="upward"){
     //   console.log(orderSelected);
       orderData = datas.sort((x, y) => upward(x, y));
       
-    // }else if(orderSelected==="downward"){
-    //   orderData = datas.sort((x, y) => downward(x, y)); 
+    }else if(orderSelected==="downward"){
+      orderData = datas.sort((x, y) => downward(x, y)); 
            
      
      }
