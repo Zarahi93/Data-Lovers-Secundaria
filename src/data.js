@@ -1,5 +1,5 @@
 // estas funciones son de ejemplo
-import data from './data/ghibli/ghibli.js';
+
 
 
 //let titles = data.films.map(({title}) => title);
@@ -7,14 +7,14 @@ import data from './data/ghibli/ghibli.js';
 
 
 
-export const filter = (filterSelected, filterClassName) => {
+export const filter = (filterSelected, filterClassName, datas) => {
   //console.log(filterSelected, filterClassName);
   let fail="Debes dar un nombre de director o producer o un año válido";
   let filterData = [];
     if(filterClassName==="director"){
       //console.log("director" + filterSelected);
 
-      filterData = data.films.filter(({director}) => director===filterSelected);
+      filterData = datas.filter(({director}) => director===filterSelected);
       //console.log(filterData);
       
       return filterData;
@@ -23,7 +23,7 @@ export const filter = (filterSelected, filterClassName) => {
     }else if(filterClassName==="producer"){
       //console.log("producer" + filterSelected);
 
-      filterData = data.films.filter(({producer}) => producer===filterSelected);
+      filterData = datas.filter(({producer}) => producer===filterSelected);
     //console.log(filterData);
       
       return filterData;
@@ -35,7 +35,7 @@ export const filter = (filterSelected, filterClassName) => {
       
       let firstDate=filterSelected[0];
       let lastDate=filterSelected.slice(-1)[0].trim();
-      filterData = data.films.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
+      filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
 
      
       //console.log(filterData);
@@ -50,37 +50,33 @@ export const filter = (filterSelected, filterClassName) => {
 
 
 
-  // export const order = (filterSelected) => {
+  function upward(x, y){
+    if (x.title < y.title) {return -1}
+    if (x.title > y.title) {return 1}
+    return 0;
+  }
 
-  // console.log(filterSelected);
-  // //let fail="Debes dar un nombre en class = director o producer o year";
-  // let filterData = [];
-  //   if(filterSelected==="upward"){
-      //console.log("director" + filterSelected);
+  function downward(x, y){
+    if (x.title > y.title) {return -1}
+    if (x.title < y.title) {return 1}
+    return 0;
+  }
 
+  export const order = (orderSelected, datas) => {
+    
+    let orderData = [];
+
+    if(orderSelected==="upward"){
+    //   console.log(orderSelected);
+      orderData = datas.sort((x, y) => upward(x, y));
+      return orderData;
       
-      
-      // filterData = data.films.title.sort(a-b);
-      // console.log(filterData);
-      
-      // return filterData;
-        
-     
-    // }else if(filterSelected==="falling"){
-    //   //console.log("producer" + filterSelected);
+    }else if(orderSelected==="downward"){
+      orderData = datas.sort((x, y) => downward(x, y)); 
+      return orderData;   
+     }
 
-    //   filterData = data.films.filter(({producer}) => producer===filterSelected);
-    //   //console.log(filterData);
-      
-    //   return filterData;
-   // } 
-
-
-
-
-
-
-  //}
+  }
 
 
 

@@ -3,12 +3,12 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-import { filter } from './data.js';
+import { filter, order } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
-
+let datas=data.films;
 let activeFilter="false";
-//let activeOrder="false";
+let activeOrder="false";
 let selectedData=[];
 let posters = [];
 let titles = []; 
@@ -24,17 +24,18 @@ let recapPicture="";
 let directorPicture="";
 let producerPicture="";
 let newArt="";
-let photo = "";
-let fatherNode="";
+const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
 function mapData(){
-
-  posters = data.films.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-  titles = data.films.map(({title}) => title);
-  years = data.films.map(({release_date}) => release_date);
-  recap = data.films.map(({description}) => description);
-  directors = data.films.map(({director}) => director);
-  producers = data.films.map(({producer}) => producer);
+  const dataOriginal = data.films;
+  console.log(dataOriginal)
+  posters = dataOriginal.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  titles = dataOriginal.map(({title}) => title);
+  //console.log(titles);
+  years = dataOriginal.map(({release_date}) => release_date);
+  recap = dataOriginal.map(({description}) => description);
+  directors = dataOriginal.map(({director}) => director);
+  producers = dataOriginal.map(({producer}) => producer);
 
 }
 
@@ -47,8 +48,8 @@ function showMovies () {
     directorPicture=document.createElement("p");
     producerPicture=document.createElement("p");
     newArt=document.createElement("article");
-    photo = posters[i];//se le asigna a la variable photo el url de cada posters
-    posterPicture.setAttribute("src", photo);  //Se agina el atrivuto de tipo src y se le da el link del poster
+   // photo = posters[i];//se le asigna a la variable photo el url de cada posters
+    posterPicture.setAttribute("src", posters[i]);  //Se agina el atrivuto de tipo src y se le da el link del poster
     posterPicture.setAttribute("class","posterMovie")
     titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
     titlePicture.setAttribute("class", "titleMovie");
@@ -70,19 +71,9 @@ function showMovies () {
 
 }
 
-
-
-fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
-
-mapData();
-showMovies();
-
-
 function showFilter(){
   fatherNode.innerHTML=""; 
-  selectedData = filter (filterSelected, filterClassName); 
-    //console.log(selectedData);
- // let principal="";
+  selectedData = filter(filterSelected, filterClassName); 
 
   if (activeFilter==="true") {
      
@@ -93,10 +84,35 @@ function showFilter(){
     directors = selectedData.map(({director}) => director)
     producers = selectedData.map(({producer}) => producer)
     showMovies ();
-
-    
   }
 }
+
+
+function showOrder(){
+  fatherNode.innerHTML=""; 
+  selectedData = order(orderSelected, datas); 
+
+  if (activeOrder==="true") {
+     
+    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+    titles = selectedData.map(({title}) => title)
+    years = selectedData.map(({release_date}) => release_date)
+    recap = selectedData.map(({description}) => description)
+    directors = selectedData.map(({director}) => director)
+    producers = selectedData.map(({producer}) => producer)
+    showMovies();
+  }
+}
+
+
+
+
+
+
+mapData();
+showMovies();
+
+
 
 
 //      *************AQUI  se leen los filtros seleccionados
@@ -109,24 +125,25 @@ function showFilter(){
   
   let filterClassName = []; 
   let filterSelected = [];
+  let orderSelected = [];
   function checkOptions(event){
     //console.log(event);
      filterSelected = (event.target.value);
+     orderSelected = (event.target.value);
      //console.log(filterSelected);
      filterClassName = (event.target.className);
-    // console.log(filterClassName);
-    // if (filterClassName==="order") {
-    //   activeOrder="true";
-    //   //fatherNode.remove();
-    //   order (filterSelected);
-    //   //showOrder();
-    // }else{
+    //console.log(filterClassName);
+    if (filterClassName==="order") {
+      activeOrder="true";
+      order(orderSelected, datas);
+      showOrder();
+    }else{
       activeFilter="true";
-      //fatherNode.remove();
-      filter (filterSelected, filterClassName);
+      console.log(datas);
+      filter(filterSelected, filterClassName, datas);
       showFilter();
         
-    // }
+     }
   }
 
     
