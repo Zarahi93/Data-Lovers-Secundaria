@@ -39,8 +39,8 @@ function mapData(){
 
 }
 
-function showMovies () {
-  for (let i = 0; i <posters.length; i++) {
+function showMovies () {console.log(posters)
+  for (let i = 0; i <posters.length; i++) { 
     posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
     titlePicture=document.createElement("p");
     yearPicture=document.createElement("p"); 
@@ -73,7 +73,7 @@ function showMovies () {
 
 function showFilter(){
   fatherNode.innerHTML=""; 
-  selectedData = filter(filterSelected, filterClassName); 
+  selectedData = filter(filterSelected, filterClassName,datas); 
 
   if (activeFilter==="true") {
      
@@ -83,7 +83,7 @@ function showFilter(){
     recap = selectedData.map(({description}) => description)
     directors = selectedData.map(({director}) => director)
     producers = selectedData.map(({producer}) => producer)
-    showMovies ();
+    showMovies();
   }
 }
 
@@ -135,12 +135,10 @@ showMovies();
     //console.log(filterClassName);
     if (filterClassName==="order") {
       activeOrder="true";
-      order(orderSelected, datas);
       showOrder();
     }else{
       activeFilter="true";
       console.log(datas);
-      filter(filterSelected, filterClassName, datas);
       showFilter();
         
      }
