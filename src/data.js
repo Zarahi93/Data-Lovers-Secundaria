@@ -16,9 +16,6 @@ export const filter = (filterSelected, filterClassName, datas) => {
 
       filterData = datas.filter(({director}) => director===filterSelected);
       //console.log(filterData);
-      
-      return filterData;
-        
      
     }else if(filterClassName==="producer"){
       //console.log("producer" + filterSelected);
@@ -26,7 +23,6 @@ export const filter = (filterSelected, filterClassName, datas) => {
       filterData = datas.filter(({producer}) => producer===filterSelected);
     //console.log(filterData);
       
-      return filterData;
 
     }else if(typeof filterSelected === "string" && filterClassName==="year") {
      // console.log(typeof filterSelected);
@@ -40,12 +36,12 @@ export const filter = (filterSelected, filterClassName, datas) => {
      
       //console.log(filterData);
       
-      return filterData;
         
     }else {
       return fail;
     }
-    
+    return filterData;
+
   }
 
 
@@ -56,25 +52,22 @@ export const filter = (filterSelected, filterClassName, datas) => {
     return 0;
   }
 
-  function downward(x, y){
-    if (x.title > y.title) {return -1}
-    if (x.title < y.title) {return 1}
-    return 0;
-  }
+  // function downward(x, y){
+  //   if (x.title > y.title) {return -1}
+  //   if (x.title < y.title) {return 1}
+  //   return 0;
+  // }
 
   export const order = (orderSelected, datas) => {
-    
     let orderData = [];
 
     if(orderSelected==="upward"){
-    //   console.log(orderSelected);
-      orderData = datas.sort((x, y) => upward(x, y));
-      return orderData;
+      orderData = [...datas].sort((x, y) => upward(x, y));
       
     }else if(orderSelected==="downward"){
-      orderData = datas.sort((x, y) => downward(x, y)); 
-      return orderData;   
-     }
+      orderData = [...datas].sort((x, y) => (x.title>y.title ? -1:1));  
+     } console.log(datas)
+     return orderData;  
 
   }
 
