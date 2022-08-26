@@ -3,11 +3,12 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-import { filter, order } from './data.js';
+import { filter, order, stadistics } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 let datas=data.films;
 let activeFilter="false";
+let activeStadistic="false";
 let activeOrder="false";
 let selectedData=[];
 let posters = [];
@@ -104,6 +105,20 @@ function showOrder(){
   }
 }
 
+function showStadistic(){
+  fatherNode.innerHTML=""; 
+  selectedData = stadistics(filterSelected, datas);
+
+  if (activeStadistic==="true") {
+    console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
+    // posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+    let titleStadistic = document.createElement("p");
+    titleStadistic.setAttribute("class", "titleStadistic");
+    titleStadistic.innerHTML=`The percentage of films made in this decade is:  ${selectedData}%`;
+    fatherNode.append(titleStadistic);
+    
+    }
+}
 
 
 
@@ -123,6 +138,7 @@ showMovies();
     checks[i].addEventListener("change", checkOptions);     
   }
   
+  let filterName = [];
   let filterClassName = []; 
   let filterSelected = [];
   let orderSelected = [];
@@ -132,14 +148,20 @@ showMovies();
      orderSelected = (event.target.value);
      //console.log(filterSelected);
      filterClassName = (event.target.className);
+     filterName = (event.target.name);
     //console.log(filterClassName);
     if (filterClassName==="order") {
       activeOrder="true";
       showOrder();
       
-    }else{
+    }else if (filterName==="filter"){
       activeFilter="true";
       showFilter();
+        
+    }
+    else if (filterName==="stadistic"){
+      activeStadistic="true";
+      showStadistic();
         
      }
   }
