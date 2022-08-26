@@ -136,6 +136,15 @@ button:hover {
   margin: 3%;
 }
 
+.stadisticBox{
+  display: flex;/*Se hace flexbox a todos los label*/
+  border-style:dotted;
+  border-color:rgb(211, 250, 250) ;
+  flex-direction: column;
+  margin: 3%;
+}
+
+
 label{
   font-family:serif;
   font-weight: 400;
@@ -173,4 +182,16 @@ label{
  }
 /*Fin del formato al resumen de la pelicula*/
 
+
+.titleStadistic{
+  color: #0D0C0C;
+  font-family: courier;
+  font-size: 250%;
+  margin: 10%;
+  background-color: #8797f0a9;
+  font-style: italic;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
 
