@@ -28,7 +28,7 @@ const fatherNode=document.querySelector("main");//Se obtiene y asigna la secció
 
 function mapData(){
   const dataOriginal = data.films;
-  console.log(dataOriginal)
+  //console.log(dataOriginal)
   posters = dataOriginal.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = dataOriginal.map(({title}) => title);
   //console.log(titles);
@@ -39,7 +39,7 @@ function mapData(){
 
 }
 
-function showMovies () {console.log(posters)
+function showMovies () {
   for (let i = 0; i <posters.length; i++) { 
     posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
     titlePicture=document.createElement("p");
@@ -73,7 +73,7 @@ function showMovies () {console.log(posters)
 
 function showFilter(){
   fatherNode.innerHTML=""; 
-  selectedData = filter(filterSelected, filterClassName,datas); 
+  selectedData = filter(filterSelected, filterClassName, datas); 
 
   if (activeFilter==="true") {
      
@@ -136,9 +136,9 @@ showMovies();
     if (filterClassName==="order") {
       activeOrder="true";
       showOrder();
+      
     }else{
       activeFilter="true";
-      console.log(datas);
       showFilter();
         
      }
