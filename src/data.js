@@ -57,4 +57,23 @@ export const filter = (filterSelected, filterClassName, datas) => {
 
 
 
+  export const stadistics = (filterSelected, datas) => {
+    let total = datas.length;
+  
+    filterSelected=filterSelected.split(','); 
+    let firstDate=filterSelected[0];
+    let lastDate=filterSelected.slice(-1)[0].trim();
+    let filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
+   
+
+    let moviesDecade=filterData.length;
+    let average=(moviesDecade/total)*100;
+    //console.log(`El porcentaje de películas relaizadas en esta década es: ${average}%`);
+     
+     return average;
+  }
+
+
+
+
 
