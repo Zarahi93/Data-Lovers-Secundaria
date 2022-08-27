@@ -7,9 +7,7 @@ import { filter, order, stadistics } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 let datas=data.films;
-let activeFilter="false";
 let activeStadistic="false";
-let activeOrder="false";
 let selectedData=[];
 let posters = [];
 let titles = []; 
@@ -72,62 +70,33 @@ function showMovies () {
 
 }
 
-function showFilter(){
-  fatherNode.innerHTML=""; 
-  selectedData = filter(filterSelected, filterClassName, datas); 
-
-  if (activeFilter==="true") {
-     
-    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-    titles = selectedData.map(({title}) => title)
-    years = selectedData.map(({release_date}) => release_date)
-    recap = selectedData.map(({description}) => description)
-    directors = selectedData.map(({director}) => director)
-    producers = selectedData.map(({producer}) => producer)
-    showMovies();
+function showFIlterOrOrder(){
+  fatherNode.innerHTML="";
+  posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  titles = selectedData.map(({title}) => title)
+  years = selectedData.map(({release_date}) => release_date)
+  recap = selectedData.map(({description}) => description)
+  directors = selectedData.map(({director}) => director)
+  producers = selectedData.map(({producer}) => producer)
+  showMovies();
   }
-}
 
-
-function showOrder(){
-  fatherNode.innerHTML=""; 
-  selectedData = order(orderSelected, datas); 
-
-  if (activeOrder==="true") {
-     
-    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-    titles = selectedData.map(({title}) => title)
-    years = selectedData.map(({release_date}) => release_date)
-    recap = selectedData.map(({description}) => description)
-    directors = selectedData.map(({director}) => director)
-    producers = selectedData.map(({producer}) => producer)
-    showMovies();
-  }
-}
 
 function showStadistic(){
   fatherNode.innerHTML=""; 
   selectedData = stadistics(filterSelected, datas);
 
-  if (activeStadistic==="true") {
-    console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
-    // posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  if (activeStadistic === "true") {
+   // console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
     let titleStadistic = document.createElement("p");
     titleStadistic.setAttribute("class", "titleStadistic");
     titleStadistic.innerHTML=`The percentage of films made in this decade is:  ${selectedData}%`;
     fatherNode.append(titleStadistic);
-    
     }
 }
 
-
-
-
-
 mapData();
 showMovies();
-
-
 
 
 //      *************AQUI  se leen los filtros seleccionados
@@ -151,25 +120,20 @@ showMovies();
      filterName = (event.target.name);
     //console.log(filterClassName);
     if (filterClassName==="order") {
-      activeOrder="true";
-      showOrder();
-      
+      selectedData = order(orderSelected, datas);
+      showFIlterOrOrder();
     }else if (filterName==="filter"){
-      activeFilter="true";
-      showFilter();
-        
+      selectedData = filter(filterSelected, filterClassName, datas);
+      showFIlterOrOrder();  
     }
     else if (filterName==="stadistic"){
-      activeStadistic="true";
+      activeStadistic="true";  
       showStadistic();
         
      }
   }
 
-    
-
-
-
+  
 let clear=document.getElementById("unselect");
 clear.addEventListener("click", unselect);
 
@@ -177,8 +141,7 @@ function unselect(){
   document.querySelectorAll("input").forEach((input) => input.checked=false);
   fatherNode.innerHTML="";
   mapData();
-  showMovies();
-  
+  showMovies(); 
 }
 
   
