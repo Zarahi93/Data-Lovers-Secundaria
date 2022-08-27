@@ -1,8 +1,7 @@
 
 export const filter = (filterSelected, filterClassName, datas) => {
   //console.log(filterSelected, filterClassName);
-  //let fail="Debes dar un nombre de director o producer o un año válido";
-  let filterData = [];
+    let filterData = [];
     if(filterClassName==="director"){
       //console.log("director" + filterSelected);
 
@@ -24,20 +23,12 @@ export const filter = (filterSelected, filterClassName, datas) => {
       let firstDate=filterSelected[0];
       let lastDate=filterSelected.slice(-1)[0].trim();
       filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
-
-     
-      //console.log(filterData);
-      
-        
-    // }else {
-    //   return fail;
     }
     return filterData;
 
   }
 
 
-  
 
   export const order = (orderSelected, datas) => {
     let orderData = [];
@@ -51,9 +42,6 @@ export const filter = (filterSelected, filterClassName, datas) => {
      return orderData;  
 
   }
-
-
-
 
 
 
