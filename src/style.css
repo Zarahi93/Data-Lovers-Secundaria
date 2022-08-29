@@ -196,3 +196,12 @@ label{
   padding: 10%;
 }
 
+footer{
+  color: #0D0C0C;
+  font-family: serif;
+  font-weight: bold;
+  font-size:large;
+  background-color: #8797f0;
+  text-align:center;
+  padding: 0.5%;
+}
