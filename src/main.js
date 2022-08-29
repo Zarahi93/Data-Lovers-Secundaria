@@ -3,12 +3,11 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-import { filter, order } from './data.js';
+import { filter, order, stadistics } from './data.js';
 
 //*********** 4 se crean los nodos por paquete 
 let datas=data.films;
-let activeFilter="false";
-let activeOrder="false";
+let activeStadistic="false";
 let selectedData=[];
 let posters = [];
 let titles = []; 
@@ -28,7 +27,7 @@ const fatherNode=document.querySelector("main");//Se obtiene y asigna la secció
 
 function mapData(){
   const dataOriginal = data.films;
-  console.log(dataOriginal)
+  //console.log(dataOriginal)
   posters = dataOriginal.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = dataOriginal.map(({title}) => title);
   //console.log(titles);
@@ -39,7 +38,7 @@ function mapData(){
 
 }
 
-function showMovies () {console.log(posters)
+function showMovies () {
   for (let i = 0; i <posters.length; i++) { 
     posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
     titlePicture=document.createElement("p");
@@ -71,48 +70,33 @@ function showMovies () {console.log(posters)
 
 }
 
-function showFilter(){
-  fatherNode.innerHTML=""; 
-  selectedData = filter(filterSelected, filterClassName,datas); 
-
-  if (activeFilter==="true") {
-     
-    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-    titles = selectedData.map(({title}) => title)
-    years = selectedData.map(({release_date}) => release_date)
-    recap = selectedData.map(({description}) => description)
-    directors = selectedData.map(({director}) => director)
-    producers = selectedData.map(({producer}) => producer)
-    showMovies();
+function showFIlterOrOrder(){
+  fatherNode.innerHTML="";
+  posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  titles = selectedData.map(({title}) => title)
+  years = selectedData.map(({release_date}) => release_date)
+  recap = selectedData.map(({description}) => description)
+  directors = selectedData.map(({director}) => director)
+  producers = selectedData.map(({producer}) => producer)
+  showMovies();
   }
-}
 
 
-function showOrder(){
+function showStadistic(){
   fatherNode.innerHTML=""; 
-  selectedData = order(orderSelected, datas); 
+  selectedData = stadistics(filterSelected, datas);
 
-  if (activeOrder==="true") {
-     
-    posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
-    titles = selectedData.map(({title}) => title)
-    years = selectedData.map(({release_date}) => release_date)
-    recap = selectedData.map(({description}) => description)
-    directors = selectedData.map(({director}) => director)
-    producers = selectedData.map(({producer}) => producer)
-    showMovies();
-  }
+  if (activeStadistic === "true") {
+   // console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
+    let titleStadistic = document.createElement("p");
+    titleStadistic.setAttribute("class", "titleStadistic");
+    titleStadistic.innerHTML=`The percentage of films made in this decade is:  ${selectedData}%`;
+    fatherNode.append(titleStadistic);
+    }
 }
-
-
-
-
-
 
 mapData();
 showMovies();
-
-
 
 
 //      *************AQUI  se leen los filtros seleccionados
@@ -123,6 +107,7 @@ showMovies();
     checks[i].addEventListener("change", checkOptions);     
   }
   
+  let filterName = [];
   let filterClassName = []; 
   let filterSelected = [];
   let orderSelected = [];
@@ -132,22 +117,23 @@ showMovies();
      orderSelected = (event.target.value);
      //console.log(filterSelected);
      filterClassName = (event.target.className);
+     filterName = (event.target.name);
     //console.log(filterClassName);
     if (filterClassName==="order") {
-      activeOrder="true";
-      showOrder();
-    }else{
-      activeFilter="true";
-      console.log(datas);
-      showFilter();
+      selectedData = order(orderSelected, datas);
+      showFIlterOrOrder();
+    }else if (filterName==="filter"){
+      selectedData = filter(filterSelected, filterClassName, datas);
+      showFIlterOrOrder();  
+    }
+    else if (filterName==="stadistic"){
+      activeStadistic="true";  
+      showStadistic();
         
      }
   }
 
-    
-
-
-
+  
 let clear=document.getElementById("unselect");
 clear.addEventListener("click", unselect);
 
@@ -155,8 +141,7 @@ function unselect(){
   document.querySelectorAll("input").forEach((input) => input.checked=false);
   fatherNode.innerHTML="";
   mapData();
-  showMovies();
-  
+  showMovies(); 
 }
 
   

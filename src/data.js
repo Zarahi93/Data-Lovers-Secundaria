@@ -1,16 +1,7 @@
-// estas funciones son de ejemplo
-
-
-
-//let titles = data.films.map(({title}) => title);
-// console.log(titles);
-
-
 
 export const filter = (filterSelected, filterClassName, datas) => {
   //console.log(filterSelected, filterClassName);
-  let fail="Debes dar un nombre de director o producer o un año válido";
-  let filterData = [];
+    let filterData = [];
     if(filterClassName==="director"){
       //console.log("director" + filterSelected);
 
@@ -32,13 +23,6 @@ export const filter = (filterSelected, filterClassName, datas) => {
       let firstDate=filterSelected[0];
       let lastDate=filterSelected.slice(-1)[0].trim();
       filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
-
-     
-      //console.log(filterData);
-      
-        
-    }else {
-      return fail;
     }
     return filterData;
 
@@ -46,32 +30,36 @@ export const filter = (filterSelected, filterClassName, datas) => {
 
 
 
-  function upward(x, y){
-    if (x.title < y.title) {return -1}
-    if (x.title > y.title) {return 1}
-    return 0;
-  }
-
-  // function downward(x, y){
-  //   if (x.title > y.title) {return -1}
-  //   if (x.title < y.title) {return 1}
-  //   return 0;
-  // }
-
   export const order = (orderSelected, datas) => {
     let orderData = [];
 
     if(orderSelected==="upward"){
-      orderData = [...datas].sort((x, y) => upward(x, y));
+      orderData = [...datas].sort((x, y) => (x.title<y.title ? -1:1)); 
       
     }else if(orderSelected==="downward"){
       orderData = [...datas].sort((x, y) => (x.title>y.title ? -1:1));  
-     } console.log(datas)
+    } 
      return orderData;  
 
   }
 
 
+
+  export const stadistics = (filterSelected, datas) => {
+    let total = datas.length;
+  
+    filterSelected=filterSelected.split(','); 
+    let firstDate=filterSelected[0];
+    let lastDate=filterSelected.slice(-1)[0].trim();
+    let filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
+   
+
+    let moviesDecade=filterData.length;
+    let average=(moviesDecade/total)*100;
+    //console.log(`El porcentaje de películas relaizadas en esta década es: ${average}%`);
+     
+     return average;
+  }
 
 
 
