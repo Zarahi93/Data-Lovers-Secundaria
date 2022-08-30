@@ -44,9 +44,9 @@ Por ello nuestra página muestra todas las animaciones y la información de esta
 
 Este borrador tiene en cuanta las tres primeras HU.
 
-![Borrador 1](/imgRM/B1.png)
+![Borrador 1](/imgRM/B1.jpg)
 
-![Borrador 2](/imgRM/B2.png)
+![Borrador 2](/imgRM/B2.jpg)
 
 #### Prototipo de alta fidelidad
 
