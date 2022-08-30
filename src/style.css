@@ -37,8 +37,8 @@ flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
   gap: 65px 130px;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 .box{
@@ -79,7 +79,7 @@ flex-direction: row-reverse;
  /*Formato a la caja para el filtrado*/
  .sidebar{
   width: 344px;
-  padding-top: 3%;
+  padding-top: 4%;
 }
 
 .boxAside{
