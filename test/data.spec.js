@@ -382,40 +382,8 @@ describe('stadistics', () => {
     expect(stadistics).toBeTruthy();
   });
 
-  // it("Si no se pasan argumentos a stadistics(datas) y sólo tiene datas regresa un arreglo vacío", () => {
-  //   const datas = [
-  //     {
-  //      release_date: "1988",
-  //     },
-  //     {
-  //      release_date: "1986", 
-  //     },
-  //     {
-  //      release_date: "1989",
-  //     },
-  //     {
-  //      release_date: "1988",
-  //     },
-  //     {
-  //      release_date: "1984",
-  //     },
-  //     {
-  //       release_date: "1988",
-  //     },
-  //     {
-  //      release_date: "1985",
-  //     },
-  //     {
-  //      release_date: "1988",
-  //     },
-  //     {
-  //      release_date: "1987",
-  //     },
-  //     {
-  //       release_date: "1981",
-  //     },
-  //   ];  
-  //   expect(stadistics(datas)).toStrictEqual([]);
+  // it.only("Si no se pasan argumentos envía un TypeError", () => {
+  //   expect(stadistics("hola", "hola")).toThrow();
   // }); 
 
   it("si se tiene datas vacía retorna Nan ya que no lo puede calcular", () => {

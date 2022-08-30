@@ -3,11 +3,10 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 import data from './data/ghibli/ghibli.js';
-import { filter, order, stadistics } from './data.js';
+import { filter, order, search, stadistics } from './data.js';
 
 //******Se declaran las variables a utilizar********
 let datas=data.films;
-let activeStadistic="false";
 let selectedData=[];//Se asigna un arreglo vacío a la variable
 let posters = [];
 let titles = []; 
@@ -70,7 +69,7 @@ function showMovies () {
 
 }
 
-function showFIlterOrOrder(){
+function showFIlterOrOrderSearch(){
   fatherNode.innerHTML="";
   posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = selectedData.map(({title}) => title)
@@ -84,15 +83,13 @@ function showFIlterOrOrder(){
 
 function showStadistic(){
   fatherNode.innerHTML=""; 
-  selectedData = stadistics(filterSelected, datas);
-
-  if (activeStadistic === "true") {
-   // console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
+  
+    // console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
     let titleStadistic = document.createElement("p");
     titleStadistic.setAttribute("class", "titleStadistic");
-    titleStadistic.innerHTML=`The percentage of films made in this decade is:  ${selectedData}%`;
+    titleStadistic.innerHTML=`Studio Ghibli has made 20 movies. <br><br> The percentage of films made in this decade is:  ${selectedData}%`;
     fatherNode.append(titleStadistic);
-    }
+    
 }
 
 mapData();
@@ -100,6 +97,7 @@ showMovies();
 
 
 //      *************AQUI  se leen los filtros seleccionados
+
    let checks = [];
    checks = document.getElementsByTagName("input"); 
 
@@ -121,19 +119,28 @@ showMovies();
     //console.log(filterClassName);
     if (filterClassName==="order") {
       selectedData = order(orderSelected, datas);
-      showFIlterOrOrder();
+      showFIlterOrOrderSearch();
     }else if (filterName==="filter"){
       selectedData = filter(filterSelected, filterClassName, datas);
-      showFIlterOrOrder();  
-    }
-    else if (filterName==="stadistic"){
-      activeStadistic="true";  
+      showFIlterOrOrderSearch();  
+    } else if (filterName==="stadistic"){ 
+      selectedData = stadistics(filterSelected, datas);
       showStadistic();
         
-     }
+     }else if (filterName==="search"){ 
+      const textForSearch = document.getElementById("searchText").value;
+      selectedData = search(textForSearch, filterSelected, datas);
+      
+      //console.log(textForSearch, filterSelected);
+      showFIlterOrOrderSearch(); 
+     } 
+    
+
   }
 
-  
+
+
+
 let clear=document.getElementById("unselect");
 clear.addEventListener("click", unselect);
 

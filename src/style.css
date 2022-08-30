@@ -94,14 +94,15 @@ flex-direction: row-reverse;
   gap: 15px;
   padding: 5%;
   border-style:double;
+  width: 90%;
 }
 details{/*Se hace flexbox a summary y section */
   display: flex;
 }
 
-button {
+button{
   font-family:serif;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 20px;
   line-height: 27px;
   width: 130px;
@@ -119,6 +120,51 @@ button:hover {
   background-color: #e4e6edec;
   color: #182e84;
  }
+
+.searchButton{
+  font-family:serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  width: 80px;
+  margin: auto;
+  color: #0D0C0C;
+  background-color: #c3cbf3ec;
+  gap: 20px;
+  padding: 2%;
+  border-radius: 10%;
+  border-color: rgb(183, 216, 240);
+
+}
+
+.searchButton:hover {
+  background-color: #e4e6edec;
+  color: #182e84;
+ }
+ 
+ form{
+  display: flex;/*Se hace flexbox a todos*/
+  border-style:dotted;
+  border-color:rgb(211, 250, 250) ;
+  flex-direction: column;
+  margin: 0%;
+ }
+
+
+ .searchText{
+  padding: 2%;
+  width: 94%;
+ }
+
+ #searchArea{
+  font-family: serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #0D0C0C;
+}
+
+
 
 .filterBox{
   display: flex;/*Se hace flexbox a todos los label*/
@@ -195,6 +241,7 @@ label{
   display: flex;
   padding: 10%;
 }
+
 
 footer{
   color: #0D0C0C;
