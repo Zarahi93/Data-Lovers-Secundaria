@@ -81,6 +81,7 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 >* Al pasar el mouse encima aparecerá el resumen de la película
 >* La UI es exactamente igual al prototipo de alta fidelidad (colores, tamaños de bloques,tipo de letra, tamaño de letra, imágenes, etc. )
 >* La UI tiene un encabezado con los personajes del estudio Ghibli.
+
 ![Diseño Inicial](/imgRM/DI.png)
 
 **Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
