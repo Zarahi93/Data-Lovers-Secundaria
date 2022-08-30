@@ -82,7 +82,7 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 >* La UI es exactamente igual al prototipo de alta fidelidad (colores, tamaños de bloques,tipo de letra, tamaño de letra, imágenes, etc. )
 >* La UI tiene un encabezado con los personajes del estudio Ghibli.
 
-![Diseño Inicial](/imgRM/DI.png)
+![Diseño Inicial](/imgRM/DI.png) ![Historia de Usiario 1](/imgRM/H1.png)
 
 **Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
 
