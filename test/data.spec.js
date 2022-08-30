@@ -382,8 +382,8 @@ describe('stadistics', () => {
     expect(stadistics).toBeTruthy();
   });
 
-  it.only("Si no se pasan argumentos envía un TypeError", () => {
-    expect(stadistics()).toThrow(TypeError);
+  it("Si no se pasan argumentos envía un TypeError", () => {
+    expect(() => stadistics()).toThrow(TypeError);
   }); 
 
   it("si se tiene datas vacía retorna Nan ya que no lo puede calcular", () => {
