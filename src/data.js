@@ -46,8 +46,8 @@ export const order = (orderSelected, datas) => {
 
 
 export const stadistics = (filterSelected, datas) => {
-  if (filterSelected === "undefined" || datas === "undefined"){
-      throw new TypeError ();
+  if (filterSelected === undefined || datas === undefined){
+      throw new TypeError('Error');
   }
   
   let total = datas.length;
