@@ -46,9 +46,9 @@ export const order = (orderSelected, datas) => {
 
 
 export const stadistics = (filterSelected, datas) => {
-  // if (filterSelected==="hola" && datas === "hola"){
-  //     throw new TypeError ("Debes enviar 2 argumentos");
-  // }
+  if (filterSelected === undefined || datas === undefined){
+      throw new TypeError('Error');
+  }
   
   let total = datas.length;
   
