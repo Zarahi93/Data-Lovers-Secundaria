@@ -69,7 +69,7 @@ function showMovies () {
 
 }
 
-function showFIlterOrOrderSearch(){
+function showResults(){
   fatherNode.innerHTML="";
   posters = selectedData.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = selectedData.map(({title}) => title)
@@ -119,10 +119,10 @@ showMovies();
     //console.log(filterClassName);
     if (filterClassName==="order") {
       selectedData = order(orderSelected, datas);
-      showFIlterOrOrderSearch();
+      showResults();
     }else if (filterName==="filter"){
       selectedData = filter(filterSelected, filterClassName, datas);
-      showFIlterOrOrderSearch();  
+      showResults();  
     } else if (filterName==="stadistic"){ 
       selectedData = stadistics(filterSelected, datas);
       showStadistic();
@@ -132,7 +132,7 @@ showMovies();
       selectedData = search(textForSearch, filterSelected, datas);
       
       //console.log(textForSearch, filterSelected);
-      showFIlterOrOrderSearch(); 
+      showResults(); 
      } 
     
 
