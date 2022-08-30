@@ -82,7 +82,7 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 >* La UI es exactamente igual al prototipo de alta fidelidad (colores, tamaños de bloques,tipo de letra, tamaño de letra, imágenes, etc. )
 >* La UI tiene un encabezado con los personajes del estudio Ghibli.
 
-![Diseño Inicial](/imgRM/DI.png) ![Historia de Usiario 1](/imgRM/H1.png)
+![Diseño Inicial](/imgRM/DI.png) 
 
 **Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
 
@@ -91,6 +91,8 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 >* La página está publicada en Github Pages y es accesible mediante un enlace/link/liga.
 >* Cada estudiante del equipo ha hecho _code review_ del código escrito por la(s) otra persona(s).
 >* Se hacen pruebas de usabilidad con al menos 2 usuarias y se incorporan las mejoras identificadas en la versión.
+
+![Historia de Usiario 1](/imgRM/H1.png)
 
 #### [Historia de usuario 2]
 
