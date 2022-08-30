@@ -18,7 +18,7 @@ Esta página web permite **visualizar la data, filtrarla, ordenarla y hacer alg�
 Con cálculo agregado nos referimos a mostrar información aún más relevante para los usuarios
 (porcentaje de películas estrenadas por década).
 
-# Studio Ghibli
+### Studio Ghibli
 
 Studio Ghibli es un estudio de animación japonés, conocido por sus largometrajes
 animados como **Mi vecino Totoro**, **El viaje de Chihiro** o
@@ -28,7 +28,7 @@ Las animaciones tienen gran acogida a nivel mundial y algunas han recibido
 varias nominaciones y premios. De todo este fandom hay un grupo que desea poder
 interactuar y ver la información de las animaciones y sus personajes.
 
-## Hallazgos
+#### Hallazgos
 
 Para entender mejor qué información podrían necesitar nuestras usuarias,
 hicimos una rápida investigación (research) y estos son algunos de los
