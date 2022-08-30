@@ -548,45 +548,45 @@ describe('search', () => {
 
   it("si se tiene datas vacía retorna un arreglo vacío", () => {
     const datas = [];  
-    expect(search("Isao Takahata", "director", datas)).toStrictEqual([]);
+    expect(search("Isao Takahata", "directors", datas)).toStrictEqual([]);
   }); 
   
-  // it.only("Muestra las películas de acuerdo al nombre del director escrito por el usuario", () => {
-  //   const datas = [
-  //     {
-  //       title:  "Castle in the Sky",
-  //       director: "Hayao Miyazaki",
-  //       producer: "Isao Takahata",
-  //       release_date: "1986",
-  //     },
-  //     {
-  //       title: "My Neighbor Totoro",
-  //       director: "Hayao Miyazaki",
-  //       producer: "Hayao Miyazaki", 
-  //       release_date: "1988",
-  //     },
-  //     {
-  //       title: "Kiki's Delivery Service",
-  //       director: "Hayao Miyazaki",
-  //       producer: "Hayao Miyazaki",
-  //       release_date: "1989",
-  //     },
-  //     {
-  //       title: "Grave of the Fireflies",
-  //       director: "Isao Takahata",
-  //       producer: "Toru Hara",
-  //       release_date: "1988",
-  //     },
-  //   ];   
-  //   expect(search("Isao Takahata", "director", datas)).toStrictEqual([
-  //     {
-  //       title: "Grave of the Fireflies",
-  //       director: "Isao Takahata",
-  //       producer: "Toru Hara",
-  //       release_date: "1988",
-  //     },
-  //   ]);
-  // }); 
+  it("Muestra las películas de acuerdo al nombre del director escrito por el usuario", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ];   
+    expect(search("Isao Takahata", "directors", datas)).toStrictEqual([
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ]);
+  }); 
 
   it("Si no existe el nombre del Director indicado retorna un arreglo vacío", () => {
     const datas = [
@@ -615,7 +615,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search("Delia", "director", datas)).toStrictEqual([]);
+    expect(search("Delia", "directors", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa un número en lugar del nombre de un Director retorna un arreglo vacío", () => {
@@ -645,7 +645,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(2, "director", datas)).toStrictEqual([]);
+    expect(search(2, "directors", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa 'null' en lugar del nombre de un Director retorna un arreglo vacío", () => {
@@ -675,8 +675,51 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(null, "director", datas)).toStrictEqual([]);
+    expect(search(null, "directors", datas)).toStrictEqual([]);
   });
+
+  it("Muestra las películas de acuerdo al nombre del productor escrito por el usuario", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ];   
+    expect(search("Hayao Miyazaki", "producers", datas)).toStrictEqual([
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+    ]);
+  }); 
 
   it("Si no existe el nombre del Productor indicado retorna un arreglo vacío", () => {
     const datas = [
@@ -705,7 +748,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search("Delia", "producer", datas)).toStrictEqual([]);
+    expect(search("Delia", "producers", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa un número en lugar del nombre de un Productor retorna un arreglo vacío", () => {
@@ -735,7 +778,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(2, "producer", datas)).toStrictEqual([]);
+    expect(search(2, "producers", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa 'null' en lugar del nombre de un productor retorna un arreglo vacío", () => {
@@ -765,13 +808,45 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(null, "producer", datas)).toStrictEqual([]);
+    expect(search(null, "producers", datas)).toStrictEqual([]);
   });
 
-
-
-
-
+  it("Muestra las películas de acuerdo al año escrito por el usuario", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ];   
+    expect(search("1986", "years", datas)).toStrictEqual([
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+    ]);
+  }); 
 
   it("Si no existe el año indicado retorna un arreglo vacío", () => {
     const datas = [
@@ -800,7 +875,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search("1979", "realese_date", datas)).toStrictEqual([]);
+    expect(search("1979", "years", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa un número en lugar del año retorna un arreglo vacío", () => {
@@ -830,7 +905,7 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(2, "realese_date", datas)).toStrictEqual([]);
+    expect(search(2, "years", datas)).toStrictEqual([]);
   }); 
 
   it("Si se pasa 'null' en lugar del año retorna un arreglo vacío", () => {
@@ -860,11 +935,151 @@ describe('search', () => {
         release_date: "1988",
       },
     ]; 
-    expect(search(null, "realese_date", datas)).toStrictEqual([]);
+    expect(search(null, "years", datas)).toStrictEqual([]);
   });
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  it("Muestra las películas de acuerdo al título escrito por el usuario", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ];   
+    expect(search("Kiki's Delivery Service", "titles", datas)).toStrictEqual([
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+    ]);
+  }); 
+
+  it("Si no existe el título indicado retorna un arreglo vacío", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ]; 
+    expect(search("Ponyo on the Cliff by the Sea", "titles", datas)).toStrictEqual([]);
+  }); 
+
+  it("Si se pasa un número en lugar del Título retorna un arreglo vacío", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ]; 
+    expect(search(2, "titles", datas)).toStrictEqual([]);
+  }); 
+
+  it("Si se pasa 'null' en lugar del título retorna un arreglo vacío", () => {
+    const datas = [
+      {
+        title:  "Castle in the Sky",
+        director: "Hayao Miyazaki",
+        producer: "Isao Takahata",
+        release_date: "1986",
+      },
+      {
+        title: "My Neighbor Totoro",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki", 
+        release_date: "1988",
+      },
+      {
+        title: "Kiki's Delivery Service",
+        director: "Hayao Miyazaki",
+        producer: "Hayao Miyazaki",
+        release_date: "1989",
+      },
+      {
+        title: "Grave of the Fireflies",
+        director: "Isao Takahata",
+        producer: "Toru Hara",
+        release_date: "1988",
+      },
+    ]; 
+    expect(search(null, "titles", datas)).toStrictEqual([]);
+  });
 
 
 });  
