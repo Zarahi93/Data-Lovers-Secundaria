@@ -87,7 +87,7 @@ function showStadistic(){
     // console.log(`El porcentaje de películas relaizadas en esta década es: ${selectedData}%`); 
     let titleStadistic = document.createElement("p");
     titleStadistic.setAttribute("class", "titleStadistic");
-    titleStadistic.innerHTML=`Studio Ghibli has made 20 movies. <br><br> The percentage of films made in this decade is:  ${selectedData}%`;
+    titleStadistic.innerHTML=`Studio Ghibli has released 20 movies. <br><br> The percentage of films released in this decade is:  ${selectedData}%`;
     fatherNode.append(titleStadistic);
     
 }
