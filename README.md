@@ -96,13 +96,16 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 
 #### [Historia de usuario 2]
 
-Yo como usuario [visitante del sitio] quiero poder FILTRAR los personajes/películas/deportistas según lo que me interesa ver en particular.
+Yo como usuario [visitante del sitio] quiero poder FILTRAR las películas según lo que me interesa ver en particular.
 
 **Criterios de Aceptación. Edita de acuerdo a tu implementación exactamente**
 
->* La UI es responsive (teléfonos y PC).
->* La UI contiene elementos para filtrar los datos (desplegables u otros).
->* Al seleccionar valores de los elementos para filtrar, en la parte inferior de la página aparece solamente el tipo de contenido filtrado.
+>*  La UI contiene elementos para filtrar los datos (radio button).
+>* Al seleccionar alguno de los elementos para filtrar, en la página aparecera solamente el resultado de ese filtrado.
+>* Se tienen tres filtros: 
+>>* Decada de lanzamiento.
+>>* Director
+>>* Productor. 
 
 **Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
 
@@ -111,6 +114,8 @@ Yo como usuario [visitante del sitio] quiero poder FILTRAR los personajes/pelíc
 >* La página está publicada en Github Pages y es accesible mediante un enlace/link/liga.
 >* Cada estudiante del equipo ha hecho _code review_ del código escrito por la(s) otra persona(s).
 >* Se hacen pruebas de usabilidad con al menos 2 usuarias y se incorporan las mejoras identificadas en la versión.
+
+![Historia de Ususario 2](/imgRM/H2.png)
 
 #### [Historia de usuario 3]
 
