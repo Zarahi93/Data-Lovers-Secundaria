@@ -5,9 +5,9 @@
 import data from './data/ghibli/ghibli.js';
 import { filter, order, search, stadistics } from './data.js';
 
-//*********** 4 se crean los nodos por paquete 
+//******Se declaran las variables a utilizar********
 let datas=data.films;
-let selectedData=[];
+let selectedData=[];//Se asigna un arreglo vacío a la variable
 let posters = [];
 let titles = []; 
 let years = [];
@@ -15,7 +15,7 @@ let recap = [];
 let directors = [];
 let producers = [];
 
-let posterPicture="";
+let posterPicture="";//Se le asigna un string vacio a la variable
 let titlePicture="";
 let yearPicture=""; 
 let recapPicture="";
@@ -24,10 +24,11 @@ let producerPicture="";
 let newArt="";
 const fatherNode=document.querySelector("main");//Se obtiene y asigna la sección main del documento a la variable fatherNode
 
+//******Funcion que crea los arreglos con la informacion de todas las peliculas*******/
 function mapData(){
   const dataOriginal = data.films;
   //console.log(dataOriginal)
-  posters = dataOriginal.map(({poster}) => poster);//Creaun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
+  posters = dataOriginal.map(({poster}) => poster);//Cre aun nuevo arreglo con todos los "poster" que se encuentran dentro del objeto "films" de cada pelicula en "posters"
   titles = dataOriginal.map(({title}) => title);
   //console.log(titles);
   years = dataOriginal.map(({release_date}) => release_date);
@@ -36,9 +37,9 @@ function mapData(){
   producers = dataOriginal.map(({producer}) => producer);
 
 }
-
+//*****Funcion que crea los elementos html donde ira la info de las peliculas *****/
 function showMovies () {
-  for (let i = 0; i <posters.length; i++) { 
+  for (let i = 0; i <posters.length; i++) { //El for es para indicar que debe repetir las acciones para cada arreglo
     posterPicture=document.createElement("img");//Se crea un elemento en el documento de tipo imagen
     titlePicture=document.createElement("p");
     yearPicture=document.createElement("p"); 
@@ -46,8 +47,7 @@ function showMovies () {
     directorPicture=document.createElement("p");
     producerPicture=document.createElement("p");
     newArt=document.createElement("article");
-   // photo = posters[i];//se le asigna a la variable photo el url de cada posters
-    posterPicture.setAttribute("src", posters[i]);  //Se agina el atrivuto de tipo src y se le da el link del poster
+    posterPicture.setAttribute("src", posters[i]);  //Se agina el atributo de tipo src y se le da el link del poster
     posterPicture.setAttribute("class","posterMovie")
     titlePicture.innerHTML=titles[i];//Se muestra el titulo de la pelicula en el documento html
     titlePicture.setAttribute("class", "titleMovie");
@@ -61,7 +61,7 @@ function showMovies () {
     producerPicture.innerHTML="Producer: " + producers[i];
     producerPicture.setAttribute("class", "producerMovie");
     fatherNode.append(newArt);//Se le dice que se ponga el nuevo article despues del anterior.
-    newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del div agregu los poster,titulos y años de las peliculas
+    newArt.append(posterPicture, titlePicture, yearPicture,recapPicture,directorPicture,producerPicture);//se le dice que dentro del article agregue la información las peliculas
     //console.log(newArt);
   
   
