@@ -187,6 +187,9 @@ Yo como usuario [visitante del sitio] quiero poder ver estadísticas de las pel�
 
 Creamos y aplicamos test unitarios a las funciones utilizadas en el proyecto para cerciorarnos de su funcionamiento.
 
+![Test](/imgRM/test.png)
+
 ## 3.Organización del Trabajo
 
-* 
+Como dupla, la organización de trabajo consistió principalmente en crear y seguir el [trello](https://trello.com/b/DcryqWAM/data-lovers-ghibli), respetar los horarios disponibles.
+
