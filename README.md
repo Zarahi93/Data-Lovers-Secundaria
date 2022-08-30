@@ -74,10 +74,11 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 >* La vista no tiene paginación, se hace scroll desde el primer elemento hasta el último.
 >* Cada cuadrícula contiene:
 >
->>* Pster de la película. 
+>>* Poster de la película. 
 >>* Nombre de la película.
 >>* Año de lanzamiento de la película.
 >
+>*Al pasar el mouse encima aparecerá el resumen de la película
 >* La UI es exactamente igual al prototipo de alta fidelidad (colores, tamaños de bloques,tipo de letra, tamaño de letra, imágenes, etc. )
 
 **Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
