@@ -96,7 +96,7 @@ Yo como usuario [visitante del sitio] quiero poder VER todas las películas para
 
 >* Todo el código está en la rama principal/main del repositorio.
 >
->* La página está publicada en Github Pages y es accesible mediante un enlace/link/liga.
+>* La página está publicada en [Github Pages](https://deliacerecedo.github.io/Data-Lovers-Principal/src/) y es accesible mediante un enlace/link/liga.
 >* Cada estudiante del equipo ha hecho _code review_ del código escrito por la(s) otra persona(s).
 >* Se hacen pruebas de usabilidad con al menos 2 usuarias y se incorporan las mejoras identificadas en la versión.
 
