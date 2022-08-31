@@ -1,6 +1,6 @@
 
 //*****Funcion para el filtrado*****//
-export const filter = (filterSelected, filterClassName, datas) => {//Se exporta y delcara la función
+export const filter = (filterSelected, filterClassName, datas) => {//Se exporta y declara la función
     let filterData = [];
     if(filterClassName==="director"){
 
@@ -32,6 +32,7 @@ export const order = (orderSelected, datas) => {//Declara y exporta la función
     orderData = [...datas].sort((x, y) => (x.title<y.title ? -1:1)); //Ordena de la A-Z segun el titulo 
       
   }else if(orderSelected==="downward"){
+    //Se crea un nuevo arreglo con los valores de data dentro de la función y sort los ordena
     orderData = [...datas].sort((x, y) => (x.title>y.title ? -1:1)); //Ordena de la Z-A segun el titulo
   } 
   return orderData;  
@@ -43,14 +44,14 @@ export const order = (orderSelected, datas) => {//Declara y exporta la función
 export const stadistics = (filterSelected, datas) => {//Declara y exporta la función
  
   
-  let total = datas.length;
+  let total = datas.length;//Total de peliculas en la data
   
   filterSelected=filterSelected.split(','); 
   let firstDate=filterSelected[0];
   let lastDate=filterSelected.slice(-1)[0].trim();
   let filterData = datas.filter(({release_date}) => (release_date>=firstDate && release_date<=lastDate));
 
-  let moviesDecade=filterData.length;
+  let moviesDecade=filterData.length;//Guarda el número de películas en una decada
   let average=(moviesDecade/total)*100;//Calcula el porcentaje de peliculas estrenadas por año     
      return average;
 }
@@ -63,7 +64,7 @@ export const search = (textForSearch, filterSelected, datas) => {
 
    }else if(filterSelected==="producers"){
     
-    filterData = datas.filter(({producer}) => producer===textForSearch);
+    filterData = datas.filter(({producer}) => producer===textForSearch);//El productor a buscar debe estar escrito igual al que esta en la data
 
    }else if(filterSelected==="titles"){
  
@@ -75,10 +76,3 @@ export const search = (textForSearch, filterSelected, datas) => {
   }
   return filterData;
 }
-  
-  
-
-
-
-
-

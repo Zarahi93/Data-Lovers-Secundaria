@@ -4,7 +4,7 @@ import { filter, order, search, stadistics } from './data.js'; //Importa las fun
 //******Se declaran las variables a utilizar********
 let datas=data.films;
 let selectedData=[];  //Se asigna un arreglo vacío a la variable
-let posters = [];    //para despues poder reasignarles otro arreglo
+let posters = [];    //para despues poder reasignarles otro arreglo (filtrado,ordenado,etc)
 let titles = []; 
 let years = [];
 let recap = [];
@@ -101,7 +101,7 @@ showMovies();
   //*****Función de filtrado y ordenado*****//
   function checkOptions(event){
      filterSelected = (event.target.value);//Guarda el valor del filtro seleccionado
-     orderSelected = (event.target.value);//Guarda el valor del filtro seleccionado
+     orderSelected = (event.target.value);//Guarda el valor del orden seleccionado
      filterClassName = (event.target.className);//Guarda el class del elemento seleccionado
      filterName = (event.target.name);//Guarda el name del elemento seleccionado para filtrar
     if (filterClassName==="order") {
@@ -122,7 +122,7 @@ showMovies();
   }
 //*****Se le da funcionalidad al boton para limpiar campos*****//
 let clear=document.getElementById("unselect");
-clear.addEventListener("click", unselect);//Al hacer click sobre el boton se manda allamar la función unselect
+clear.addEventListener("click", unselect);//Al hacer click sobre el boton se manda a llamar la función unselect
 
 //*****Función que deselecciona los radio buttons y muestra la data original*****//
 function unselect(){

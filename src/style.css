@@ -56,19 +56,13 @@ flex-direction: row-reverse;
 }
 
 .directorMovie {
-  font-family: serif;
   font-weight: 400;
   font-size: 20px;
-  text-align: center;
-  color: #0D0C0C;
 }
 
 .producerMovie{
-  font-family: serif;
   font-weight: 400;
   font-size: 20px;
-  text-align: center;
-  color: #0D0C0C;
 }
 
  .posterMovie{
