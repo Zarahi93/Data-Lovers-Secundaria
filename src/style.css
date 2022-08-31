@@ -115,7 +115,7 @@ button:hover {
   color: #182e84;
  }
 
-.searchButton{
+/* .searchButton{
   font-family:serif;
   font-weight: bold;
   font-size: 15px;
@@ -134,16 +134,15 @@ button:hover {
 .searchButton:hover {
   background-color: #e4e6edec;
   color: #182e84;
- }
+ } */
+
  
  form{
-  display: flex;/*Se hace flexbox a todos*/
+  display: flex;/*Se hace flexbox a todos sus hijos*/
   border-style:dotted;
   border-color:rgb(211, 250, 250) ;
   flex-direction: column;
-  margin: 0%;
  }
-
 
  .searchText{
   padding: 2%;
@@ -157,8 +156,6 @@ button:hover {
   text-align: center;
   color: #0D0C0C;
 }
-
-
 
 .filterBox{
   display: flex;/*Se hace flexbox a todos los label*/
