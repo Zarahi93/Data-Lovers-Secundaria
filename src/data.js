@@ -34,7 +34,7 @@ export const order = (orderSelected, datas) => {//Declara y exporta la función
   }else if(orderSelected==="downward"){
     //Se crea un nuevo arreglo con los valores de data dentro de la función y sort los ordena
     orderData = [...datas].sort((x, y) => (x.title>y.title ? -1:1)); //Ordena de la Z-A segun el titulo
-  } 
+  } //Operador de propagación [...datas]
   return orderData;  
 
 }
